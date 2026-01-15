@@ -1,29 +1,6 @@
 // ===== Dynamic Copyright Year =====
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ===== Theme Toggle =====
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = themeToggle?.querySelector('.theme-icon');
-
-// Check for saved theme preference or default to light (luxury feel)
-const savedTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
-updateThemeIcon(savedTheme);
-
-themeToggle?.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-});
-
-function updateThemeIcon(theme) {
-    if (themeIcon) {
-        themeIcon.innerHTML = theme === 'dark' ? '&#9790;' : '&#9728;';
-    }
-}
 
 // ===== Back to Top Button =====
 const backToTop = document.getElementById('backToTop');
