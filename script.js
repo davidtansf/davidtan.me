@@ -2,8 +2,8 @@
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = themeToggle?.querySelector('.theme-icon');
 
-// Check for saved theme preference or default to dark
-const savedTheme = localStorage.getItem('theme') || 'dark';
+// Check for saved theme preference or default to light (luxury feel)
+const savedTheme = localStorage.getItem('theme') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeIcon(savedTheme);
 
@@ -44,9 +44,12 @@ const observerOptions = {
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
+            // Add staggered delay for multiple elements
+            setTimeout(() => {
+                entry.target.classList.add('animate-in');
+            }, index * 100);
             observer.unobserve(entry.target);
         }
     });
@@ -56,7 +59,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.travel-card, .blog-card, .about-professional, .about-personal').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
     observer.observe(el);
 });
 
@@ -82,7 +85,7 @@ filterButtons.forEach(btn => {
 
         const filter = btn.dataset.filter;
 
-        // Filter cards
+        // Filter cards with elegant fade
         blogCards.forEach(card => {
             const category = card.dataset.category;
             if (filter === 'all' || category === filter) {
@@ -90,13 +93,13 @@ filterButtons.forEach(btn => {
                 setTimeout(() => {
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
-                }, 10);
+                }, 50);
             } else {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
                 setTimeout(() => {
                     card.style.display = 'none';
-                }, 300);
+                }, 400);
             }
         });
     });
@@ -109,145 +112,18 @@ newsletterForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = e.target.querySelector('input[type="email"]').value;
 
-    // Show success message (in a real implementation, you'd send this to a backend)
+    // Show success message
     const btn = e.target.querySelector('button');
     const originalText = btn.textContent;
-    btn.textContent = 'Subscribed!';
-    btn.style.background = 'var(--magenta)';
+    btn.textContent = 'Thank You!';
+    btn.style.background = 'var(--palm)';
 
     setTimeout(() => {
         btn.textContent = originalText;
         btn.style.background = '';
         e.target.reset();
-    }, 2000);
+    }, 2500);
 });
-
-// ===== Cursor Trail Effect =====
-const cursorTrail = [];
-const trailLength = 10;
-
-for (let i = 0; i < trailLength; i++) {
-    const dot = document.createElement('div');
-    dot.style.cssText = `
-        position: fixed;
-        width: ${8 - i * 0.5}px;
-        height: ${8 - i * 0.5}px;
-        background: ${i % 2 === 0 ? 'var(--cyan)' : 'var(--magenta)'};
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        opacity: ${1 - i * 0.1};
-        transition: transform 0.1s ease;
-        display: none;
-    `;
-    document.body.appendChild(dot);
-    cursorTrail.push(dot);
-}
-
-let mouseX = 0, mouseY = 0;
-let trailPositions = [];
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    // Show trail dots
-    cursorTrail.forEach(dot => dot.style.display = 'block');
-});
-
-document.addEventListener('mouseleave', () => {
-    cursorTrail.forEach(dot => dot.style.display = 'none');
-});
-
-function animateTrail() {
-    trailPositions.unshift({ x: mouseX, y: mouseY });
-
-    if (trailPositions.length > trailLength) {
-        trailPositions.pop();
-    }
-
-    cursorTrail.forEach((dot, i) => {
-        const pos = trailPositions[i] || trailPositions[trailPositions.length - 1];
-        if (pos) {
-            dot.style.left = pos.x + 'px';
-            dot.style.top = pos.y + 'px';
-        }
-    });
-
-    requestAnimationFrame(animateTrail);
-}
-
-animateTrail();
-
-// ===== Avatar Click Effect =====
-const avatar = document.querySelector('.placeholder-avatar');
-
-avatar?.addEventListener('click', () => {
-    avatar.style.animation = 'spin 0.5s ease';
-
-    // Create confetti
-    for (let i = 0; i < 20; i++) {
-        createConfetti(avatar);
-    }
-
-    setTimeout(() => {
-        avatar.style.animation = '';
-    }, 500);
-});
-
-function createConfetti(element) {
-    const confetti = document.createElement('div');
-    const rect = element.getBoundingClientRect();
-    const color = Math.random() > 0.5 ? 'var(--cyan)' : 'var(--magenta)';
-
-    confetti.style.cssText = `
-        position: fixed;
-        width: 10px;
-        height: 10px;
-        background: ${color};
-        left: ${rect.left + rect.width / 2}px;
-        top: ${rect.top + rect.height / 2}px;
-        pointer-events: none;
-        z-index: 9999;
-    `;
-
-    document.body.appendChild(confetti);
-
-    const angle = Math.random() * Math.PI * 2;
-    const velocity = 5 + Math.random() * 10;
-    const vx = Math.cos(angle) * velocity;
-    const vy = Math.sin(angle) * velocity;
-    let opacity = 1;
-    let x = 0, y = 0;
-
-    function animate() {
-        x += vx;
-        y += vy + 2; // gravity
-        opacity -= 0.02;
-
-        confetti.style.transform = `translate(${x}px, ${y}px) rotate(${x * 5}deg)`;
-        confetti.style.opacity = opacity;
-
-        if (opacity > 0) {
-            requestAnimationFrame(animate);
-        } else {
-            confetti.remove();
-        }
-    }
-
-    animate();
-}
-
-// Add spin animation
-const spinStyle = document.createElement('style');
-spinStyle.textContent = `
-    @keyframes spin {
-        from { transform: rotate(0deg) scale(1); }
-        50% { transform: rotate(180deg) scale(1.1); }
-        to { transform: rotate(360deg) scale(1); }
-    }
-`;
-document.head.appendChild(spinStyle);
 
 // ===== Smooth Scroll for Anchor Links =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -260,36 +136,101 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== Typing Effect for Label =====
+// ===== Elegant Parallax Effect on Hero =====
+const hero = document.querySelector('.hero');
+const heroImage = document.querySelector('.hero-image');
+
+if (hero && heroImage) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const rate = scrolled * 0.3;
+
+        if (scrolled < window.innerHeight) {
+            heroImage.style.transform = `translateY(${rate}px)`;
+        }
+    });
+}
+
+// ===== Image Frame Hover Effect =====
+const imageFrame = document.querySelector('.image-frame');
+
+imageFrame?.addEventListener('mouseenter', () => {
+    imageFrame.style.transform = 'scale(1.02)';
+});
+
+imageFrame?.addEventListener('mouseleave', () => {
+    imageFrame.style.transform = 'scale(1)';
+});
+
+// ===== Navigation Scroll Effect =====
+const navHeader = document.querySelector('.nav-header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 100) {
+        navHeader?.classList.add('scrolled');
+    } else {
+        navHeader?.classList.remove('scrolled');
+    }
+
+    lastScroll = currentScroll;
+});
+
+// Add scrolled nav styles
+const navStyle = document.createElement('style');
+navStyle.textContent = `
+    .nav-header.scrolled {
+        padding: 0.75rem 3rem;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    @media (max-width: 768px) {
+        .nav-header.scrolled {
+            padding: 0.75rem 1.5rem;
+        }
+    }
+`;
+document.head.appendChild(navStyle);
+
+// ===== Typing Effect for Label (Elegant Version) =====
 const label = document.querySelector('.label');
 if (label) {
     const text = label.textContent;
     label.textContent = '';
+    label.style.opacity = '1';
     let i = 0;
 
     function typeWriter() {
         if (i < text.length) {
             label.textContent += text.charAt(i);
             i++;
-            setTimeout(typeWriter, 100);
+            setTimeout(typeWriter, 80);
         }
     }
 
     // Start typing after page load
-    setTimeout(typeWriter, 500);
+    setTimeout(typeWriter, 800);
 }
 
-// ===== Glow Pulse Animation =====
-const glowElements = document.querySelectorAll('.logo, .hero h1');
-glowElements.forEach(el => {
-    el.style.animation = 'glow-pulse 6s ease-in-out infinite';
+// ===== Subtle Hover Effects for Cards =====
+document.querySelectorAll('.travel-card, .blog-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+    });
 });
 
-const glowStyle = document.createElement('style');
-glowStyle.textContent = `
-    @keyframes glow-pulse {
-        0%, 100% { filter: brightness(1); }
-        50% { filter: brightness(1.2); }
-    }
-`;
-document.head.appendChild(glowStyle);
+// ===== Load More Button (for future blog expansion) =====
+const loadMoreBtn = document.getElementById('loadMore');
+
+loadMoreBtn?.addEventListener('click', () => {
+    loadMoreBtn.textContent = 'Loading...';
+
+    // Simulate loading (replace with actual functionality)
+    setTimeout(() => {
+        loadMoreBtn.textContent = 'No More Posts';
+        loadMoreBtn.disabled = true;
+        loadMoreBtn.style.opacity = '0.5';
+    }, 1000);
+});
