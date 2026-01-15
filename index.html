@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Tan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pixel decorations -->
+    <div class="pixel-decoration pixel-top"></div>
+    <div class="pixel-decoration pixel-bottom"></div>
+
+    <!-- Navigation -->
+    <header class="nav-header">
+        <a href="index.html" class="logo">DT_</a>
+        <nav class="nav-links">
+            <a href="blog.html">Blog</a>
+            <a href="#about">About</a>
+            <a href="#travel">Travel</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="theme-icon">&#9790;</span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="label">EXPLORER & CREATOR</span>
+                <h1 class="glitch" data-text="David Tan">David Tan</h1>
+                <p class="tagline">Building things & exploring the world</p>
+                <p class="intro">
+                    Welcome to my corner of the internet. I'm a passionate technologist
+                    by day and an avid traveler whenever I can escape. Here you'll find
+                    my thoughts on tech, life, and adventures around the globe.
+                </p>
+                <div class="cta-buttons">
+                    <a href="blog.html" class="btn btn-primary">Read My Blog</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-frame">
+                    <div class="placeholder-avatar">
+                        <span>DT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="section-header">
+            <span class="section-label">// ABOUT</span>
+            <h2>Who I Am</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-professional">
+                <h3><span class="accent">></span> Professional Life</h3>
+                <p>
+                    I'm a software engineer with a passion for building products that
+                    make a difference. With experience spanning full-stack development,
+                    cloud architecture, and emerging technologies, I love tackling
+                    complex problems and turning ideas into reality.
+                </p>
+                <p>
+                    Currently focused on [Your Current Role/Company]. Previously worked
+                    on projects involving [Technologies/Domains]. I believe in clean code,
+                    continuous learning, and the power of technology to transform lives.
+                </p>
+            </div>
+            <div class="about-personal">
+                <h3><span class="accent">></span> Beyond the Code</h3>
+                <p>
+                    When I'm not coding, you'll find me planning my next adventure or
+                    reminiscing about past travels. I've been fortunate to explore
+                    [X+ countries] across [continents], from the bustling streets of
+                    Tokyo to the serene beaches of Bali.
+                </p>
+                <p>
+                    Travel has taught me to embrace uncertainty, appreciate diverse
+                    perspectives, and find beauty in the unexpected. These experiences
+                    shape not just who I am, but how I approach problems and creativity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Section -->
+    <section id="travel" class="section travel-section">
+        <div class="section-header">
+            <span class="section-label">// WANDERLUST</span>
+            <h2>Travel Adventures</h2>
+        </div>
+        <div class="travel-grid">
+            <div class="travel-card">
+                <div class="travel-card-image" style="background: linear-gradient(135deg, var(--cyan), var(--magenta));">
+                    <span class="travel-emoji">&#127983;</span>
+                </div>
+                <div class="travel-card-content">
+                    <h4>Asia</h4>
+                    <p>Japan, Thailand, Vietnam, Singapore...</p>
+                </div>
+            </div>
+            <div class="travel-card">
+                <div class="travel-card-image" style="background: linear-gradient(135deg, var(--magenta), var(--cyan));">
+                    <span class="travel-emoji">&#127470;&#127481;</span>
+                </div>
+                <div class="travel-card-content">
+                    <h4>Europe</h4>
+                    <p>Italy, France, Spain, Germany...</p>
+                </div>
+            </div>
+            <div class="travel-card">
+                <div class="travel-card-image" style="background: linear-gradient(135deg, var(--cyan), var(--magenta));">
+                    <span class="travel-emoji">&#127758;</span>
+                </div>
+                <div class="travel-card-content">
+                    <h4>Americas</h4>
+                    <p>USA, Mexico, Costa Rica...</p>
+                </div>
+            </div>
+        </div>
+        <p class="travel-cta">
+            Check out my <a href="blog.html">blog</a> for detailed travel stories and tips!
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="section-header">
+            <span class="section-label">// CONNECT</span>
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-content">
+            <p>I'm always excited to connect with fellow travelers, tech enthusiasts, or anyone with an interesting story to share.</p>
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank" rel="noopener" class="social-link">
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="social-link">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-link">
+                    <span>Twitter/X</span>
+                </a>
+                <a href="mailto:hello@davidtan.me" class="social-link">
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 David Tan. Built with passion and too much coffee.</p>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
