@@ -1,3 +1,6 @@
+// ===== Dynamic Copyright Year =====
+document.getElementById('year').textContent = new Date().getFullYear();
+
 // ===== Theme Toggle =====
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = themeToggle?.querySelector('.theme-icon');
