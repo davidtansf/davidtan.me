@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +13,6 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <!-- Pixel decorations -->
-    <div class="pixel-decoration pixel-top"></div>
-    <div class="pixel-decoration pixel-bottom"></div>
-
     <!-- Navigation -->
     <header class="nav-header">
         <a href="/" class="logo">David Tan</a>
@@ -37,96 +35,20 @@
 
     <!-- Blog Posts Grid -->
     <section class="blog-section">
-        <div class="blog-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="tech">Tech</button>
-            <button class="filter-btn" data-filter="travel">Travel</button>
-            <button class="filter-btn" data-filter="life">Life</button>
-        </div>
-
         <div class="blog-grid">
-            <!-- Sample Blog Post 1 -->
-            <article class="blog-card" data-category="travel">
-                <div class="blog-card-image">
-                    <span class="category-tag">Travel</span>
+            {% for post in site.posts %}
+            <article class="blog-card" data-category="{{ post.category | downcase }}">
+                <div class="blog-card-image {% if post.category == 'Tech' %}tech-gradient{% elsif post.category == 'Life' %}life-gradient{% endif %}">
+                    <span class="category-tag">{{ post.category }}</span>
                 </div>
                 <div class="blog-card-content">
-                    <time class="blog-date">January 15, 2025</time>
-                    <h3><a href="#">Getting Lost in Tokyo: A First-Timer's Guide</a></h3>
-                    <p>My experience navigating the vibrant streets of Tokyo, from hidden ramen shops to serene temples...</p>
-                    <a href="#" class="read-more">Read More &rarr;</a>
+                    <time class="blog-date">{{ post.date | date: "%B %d, %Y" }}</time>
+                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                    <a href="{{ post.url }}" class="read-more">Read More &rarr;</a>
                 </div>
             </article>
-
-            <!-- Sample Blog Post 2 -->
-            <article class="blog-card" data-category="tech">
-                <div class="blog-card-image tech-gradient">
-                    <span class="category-tag">Tech</span>
-                </div>
-                <div class="blog-card-content">
-                    <time class="blog-date">January 10, 2025</time>
-                    <h3><a href="#">Why I Switched to a New Tech Stack</a></h3>
-                    <p>After years of using the same tools, I finally made the leap. Here's what I learned...</p>
-                    <a href="#" class="read-more">Read More &rarr;</a>
-                </div>
-            </article>
-
-            <!-- Sample Blog Post 3 -->
-            <article class="blog-card" data-category="life">
-                <div class="blog-card-image life-gradient">
-                    <span class="category-tag">Life</span>
-                </div>
-                <div class="blog-card-content">
-                    <time class="blog-date">January 5, 2025</time>
-                    <h3><a href="#">Lessons from a Year of Remote Work</a></h3>
-                    <p>Working from anywhere sounds like a dream until you actually try it. Here's my honest take...</p>
-                    <a href="#" class="read-more">Read More &rarr;</a>
-                </div>
-            </article>
-
-            <!-- Sample Blog Post 4 -->
-            <article class="blog-card" data-category="travel">
-                <div class="blog-card-image">
-                    <span class="category-tag">Travel</span>
-                </div>
-                <div class="blog-card-content">
-                    <time class="blog-date">December 28, 2024</time>
-                    <h3><a href="#">Island Hopping in Southeast Asia</a></h3>
-                    <p>From the limestone cliffs of Thailand to the rice terraces of Bali, this trip had it all...</p>
-                    <a href="#" class="read-more">Read More &rarr;</a>
-                </div>
-            </article>
-
-            <!-- Sample Blog Post 5 -->
-            <article class="blog-card" data-category="tech">
-                <div class="blog-card-image tech-gradient">
-                    <span class="category-tag">Tech</span>
-                </div>
-                <div class="blog-card-content">
-                    <time class="blog-date">December 20, 2024</time>
-                    <h3><a href="#">Building My Personal Website with Claude</a></h3>
-                    <p>How I used AI to help design and build this very website you're reading...</p>
-                    <a href="#" class="read-more">Read More &rarr;</a>
-                </div>
-            </article>
-
-            <!-- Sample Blog Post 6 -->
-            <article class="blog-card" data-category="life">
-                <div class="blog-card-image life-gradient">
-                    <span class="category-tag">Life</span>
-                </div>
-                <div class="blog-card-content">
-                    <time class="blog-date">December 15, 2024</time>
-                    <h3><a href="#">Finding Balance: Tech Career & Travel</a></h3>
-                    <p>Balancing a demanding career with the desire to explore the world isn't easy, but it's possible...</p>
-                    <a href="#" class="read-more">Read More &rarr;</a>
-                </div>
-            </article>
-        </div>
-
-        <!-- Load More Button -->
-        <div class="load-more-container">
-            <button class="btn btn-primary" id="loadMore">Load More Posts</button>
+            {% endfor %}
         </div>
     </section>
 

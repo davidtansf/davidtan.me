@@ -1,0 +1,21 @@
+title: David Tan
+description: Discovering the world, one destination at a time
+url: "https://davidtan.me"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
