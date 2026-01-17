@@ -411,8 +411,35 @@
                     });
 
                     province.addEventListener('mousemove', function(e) {
-                        tooltip.style.left = e.clientX + 15 + 'px';
-                        tooltip.style.top = e.clientY + 15 + 'px';
+                        const tooltipRect = tooltip.getBoundingClientRect();
+                        const padding = 15;
+
+                        // Calculate position, keeping tooltip within viewport
+                        let left = e.clientX + padding;
+                        let top = e.clientY + padding;
+
+                        // Check right edge
+                        if (left + tooltipRect.width > window.innerWidth - padding) {
+                            left = e.clientX - tooltipRect.width - padding;
+                        }
+
+                        // Check bottom edge
+                        if (top + tooltipRect.height > window.innerHeight - padding) {
+                            top = e.clientY - tooltipRect.height - padding;
+                        }
+
+                        // Check left edge
+                        if (left < padding) {
+                            left = padding;
+                        }
+
+                        // Check top edge
+                        if (top < padding) {
+                            top = padding;
+                        }
+
+                        tooltip.style.left = left + 'px';
+                        tooltip.style.top = top + 'px';
                     });
 
                     province.addEventListener('mouseleave', function() {
