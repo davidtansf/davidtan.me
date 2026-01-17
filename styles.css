@@ -615,6 +615,10 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, var(--coral) 0%, var(--gold) 100%);
 }
 
+.blog-card-image.finance-gradient {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--palm) 100%);
+}
+
 .category-tag {
     position: absolute;
     top: 1.25rem;

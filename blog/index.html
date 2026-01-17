@@ -46,7 +46,7 @@
         <div class="blog-grid">
             {% for post in site.posts %}
             <article class="blog-card" data-category="{{ post.category | downcase }}">
-                <div class="blog-card-image {% if post.category == 'Tech' %}tech-gradient{% elsif post.category == 'Life' %}life-gradient{% endif %}">
+                <div class="blog-card-image {% if post.category == 'Tech' %}tech-gradient{% elsif post.category == 'Life' %}life-gradient{% elsif post.category == 'Finance' %}finance-gradient{% endif %}">
                     <span class="category-tag">{{ post.category }}</span>
                 </div>
                 <div class="blog-card-content">
