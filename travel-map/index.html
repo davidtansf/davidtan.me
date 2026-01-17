@@ -380,6 +380,15 @@
                 provinces.forEach(province => {
                     const provinceName = province.getAttribute('title');
 
+                    // Skip the lake - style it separately
+                    if (provinceName === 'Lake Songkhla') {
+                        province.style.fill = '#4a9fb0';
+                        province.style.stroke = '#fff';
+                        province.style.strokeWidth = '0.5';
+                        province.style.cursor = 'default';
+                        return;
+                    }
+
                     if (visitedProvinces.includes(provinceName)) {
                         province.classList.add('visited');
                     }
@@ -393,7 +402,7 @@
 
                     // Tooltip events
                     province.addEventListener('mouseenter', function(e) {
-                        if (provinceName && provinceName !== 'Lake Songkhla') {
+                        if (provinceName) {
                             tooltip.textContent = provinceName + (visitedProvinces.includes(provinceName) ? ' ✓' : '');
                             tooltip.classList.add('visible');
                             // Hover color
@@ -412,13 +421,6 @@
                         this.style.fill = visitedProvinces.includes(provinceName) ? '#e07a5f' : '#e8dfd0';
                     });
                 });
-
-                // Style the lake differently
-                const lake = svgDoc.querySelector('[title="Lake Songkhla"]');
-                if (lake) {
-                    lake.style.fill = '#4a9fb0';
-                    lake.style.cursor = 'default';
-                }
             });
         });
     </script>
