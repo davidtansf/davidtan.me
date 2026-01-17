@@ -412,22 +412,28 @@
 
                     province.addEventListener('mousemove', function(e) {
                         const padding = 15;
-                        // Estimate tooltip size (or use actual if available)
                         const tooltipWidth = tooltip.offsetWidth || 200;
                         const tooltipHeight = tooltip.offsetHeight || 40;
 
-                        // Calculate position, keeping tooltip within viewport
-                        let left = e.clientX + padding;
-                        let top = e.clientY + padding;
+                        // Get the object element's position on the page
+                        const objectRect = mapObject.getBoundingClientRect();
+
+                        // Calculate actual viewport position (SVG coords + object offset)
+                        let mouseX = e.clientX + objectRect.left;
+                        let mouseY = e.clientY + objectRect.top;
+
+                        // Calculate tooltip position
+                        let left = mouseX + padding;
+                        let top = mouseY + padding;
 
                         // Check right edge
                         if (left + tooltipWidth > window.innerWidth - padding) {
-                            left = e.clientX - tooltipWidth - padding;
+                            left = mouseX - tooltipWidth - padding;
                         }
 
                         // Check bottom edge
                         if (top + tooltipHeight > window.innerHeight - padding) {
-                            top = e.clientY - tooltipHeight - padding;
+                            top = mouseY - tooltipHeight - padding;
                         }
 
                         // Check left edge
