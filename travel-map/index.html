@@ -69,7 +69,7 @@
         }
 
         .map-container {
-            max-width: 900px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 2rem 3rem 4rem;
         }
@@ -85,27 +85,33 @@
         #thailand-map {
             width: 100%;
             height: auto;
+            display: block;
         }
 
-        #thailand-map .province {
+        #thailand-map path {
             fill: var(--sand-dark);
             stroke: #fff;
-            stroke-width: 1;
-            transition: all 0.3s ease;
+            stroke-width: 0.5;
+            transition: all 0.2s ease;
             cursor: pointer;
         }
 
-        #thailand-map .province:hover {
+        #thailand-map path:hover {
             fill: var(--ocean-light);
-            transform: translateY(-2px);
         }
 
-        #thailand-map .province.visited {
+        #thailand-map path.visited {
             fill: var(--coral);
         }
 
-        #thailand-map .province.visited:hover {
+        #thailand-map path.visited:hover {
             fill: var(--coral-dark);
+        }
+
+        /* Hide the lake */
+        #thailand-map #lake-songkhla {
+            fill: var(--ocean-light);
+            cursor: default;
         }
 
         .map-tooltip {
@@ -153,6 +159,17 @@
 
         .legend-color.not-visited {
             background: var(--sand-dark);
+        }
+
+        .map-credit {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .map-credit a {
+            color: var(--text-light);
         }
 
         @media (max-width: 768px) {
@@ -216,100 +233,9 @@
     <!-- Map Container -->
     <section class="map-container">
         <div class="map-wrapper">
-            <svg id="thailand-map" viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg">
-                <!-- Northern Region -->
-                <path class="province" id="chiang-rai" d="M200,20 L240,15 L270,25 L280,50 L270,80 L240,85 L220,70 L200,50 Z" data-name="Chiang Rai"/>
-                <path class="province" id="chiang-mai" d="M140,60 L180,50 L200,50 L220,70 L240,85 L230,120 L200,140 L160,130 L130,100 L120,70 Z" data-name="Chiang Mai"/>
-                <path class="province" id="mae-hong-son" d="M80,80 L120,70 L130,100 L120,140 L100,160 L70,150 L60,120 L70,90 Z" data-name="Mae Hong Son"/>
-                <path class="province" id="lamphun" d="M160,130 L200,140 L210,170 L180,180 L150,160 Z" data-name="Lamphun"/>
-                <path class="province" id="lampang" d="M200,140 L230,120 L270,130 L280,160 L260,190 L220,190 L210,170 Z" data-name="Lampang"/>
-                <path class="province" id="phrae" d="M270,130 L300,120 L320,140 L310,180 L280,190 L260,190 L280,160 Z" data-name="Phrae"/>
-                <path class="province" id="nan" d="M300,120 L340,100 L370,120 L360,170 L330,190 L310,180 L320,140 Z" data-name="Nan"/>
-                <path class="province" id="phayao" d="M240,85 L270,80 L280,50 L300,60 L310,90 L300,120 L270,130 L230,120 Z" data-name="Phayao"/>
-                <path class="province" id="uttaradit" d="M280,190 L310,180 L330,190 L340,220 L310,240 L280,230 L260,210 Z" data-name="Uttaradit"/>
-
-                <!-- Upper Central / Lower North -->
-                <path class="province" id="tak" d="M100,160 L120,140 L160,130 L150,160 L160,200 L140,250 L100,260 L70,230 L70,180 Z" data-name="Tak"/>
-                <path class="province" id="sukhothai" d="M160,200 L200,190 L230,210 L220,250 L180,260 L150,240 Z" data-name="Sukhothai"/>
-                <path class="province" id="phitsanulok" d="M230,210 L280,200 L310,220 L300,260 L260,280 L220,260 L220,250 Z" data-name="Phitsanulok"/>
-                <path class="province" id="kamphaeng-phet" d="M150,240 L180,260 L190,300 L160,320 L130,300 L130,260 Z" data-name="Kamphaeng Phet"/>
-                <path class="province" id="phichit" d="M180,260 L220,260 L230,290 L210,320 L190,320 L190,300 Z" data-name="Phichit"/>
-                <path class="province" id="phetchabun" d="M260,280 L300,260 L330,280 L340,330 L310,360 L270,350 L250,310 Z" data-name="Phetchabun"/>
-
-                <!-- Northeastern Region (Isan) -->
-                <path class="province" id="loei" d="M300,260 L340,220 L380,230 L400,270 L380,310 L340,330 L330,280 Z" data-name="Loei"/>
-                <path class="province" id="nong-khai" d="M340,220 L360,170 L400,160 L440,180 L450,220 L420,240 L380,230 Z" data-name="Nong Khai"/>
-                <path class="province" id="bueng-kan" d="M440,180 L480,170 L500,200 L490,240 L450,250 L450,220 Z" data-name="Bueng Kan"/>
-                <path class="province" id="udon-thani" d="M380,230 L420,240 L440,280 L420,320 L380,310 L370,270 Z" data-name="Udon Thani"/>
-                <path class="province" id="nong-bua-lam-phu" d="M370,270 L380,310 L360,340 L330,330 L340,300 Z" data-name="Nong Bua Lam Phu"/>
-                <path class="province" id="sakon-nakhon" d="M420,240 L450,250 L470,290 L450,330 L420,320 L440,280 Z" data-name="Sakon Nakhon"/>
-                <path class="province" id="nakhon-phanom" d="M450,250 L490,240 L500,280 L490,330 L470,340 L450,330 L470,290 Z" data-name="Nakhon Phanom"/>
-                <path class="province" id="mukdahan" d="M470,340 L490,330 L500,370 L480,400 L450,390 L450,360 Z" data-name="Mukdahan"/>
-                <path class="province" id="kalasin" d="M400,320 L420,320 L450,330 L450,360 L420,380 L390,360 Z" data-name="Kalasin"/>
-                <path class="province" id="khon-kaen" d="M360,340 L390,360 L400,400 L370,430 L330,410 L330,370 Z" data-name="Khon Kaen"/>
-                <path class="province" id="chaiyaphum" d="M310,360 L340,330 L360,340 L330,370 L330,410 L300,420 L280,390 L270,350 Z" data-name="Chaiyaphum"/>
-                <path class="province" id="maha-sarakham" d="M390,360 L420,380 L430,420 L400,440 L370,430 L400,400 Z" data-name="Maha Sarakham"/>
-                <path class="province" id="roi-et" d="M420,380 L450,360 L450,390 L460,430 L430,450 L400,440 L430,420 Z" data-name="Roi Et"/>
-                <path class="province" id="yasothon" d="M450,390 L480,400 L480,440 L460,460 L430,450 L460,430 L450,390 Z" data-name="Yasothon"/>
-                <path class="province" id="amnat-charoen" d="M480,400 L500,410 L500,460 L480,470 L460,460 L480,440 Z" data-name="Amnat Charoen"/>
-                <path class="province" id="ubon-ratchathani" d="M430,450 L460,460 L480,470 L490,520 L450,540 L420,510 L400,470 L400,440 Z" data-name="Ubon Ratchathani"/>
-                <path class="province" id="sisaket" d="M380,460 L400,470 L420,510 L390,530 L360,510 L360,480 Z" data-name="Sisaket"/>
-                <path class="province" id="surin" d="M340,450 L380,460 L360,480 L360,510 L330,520 L310,490 L320,460 Z" data-name="Surin"/>
-                <path class="province" id="buriram" d="M300,420 L330,410 L340,450 L320,460 L310,490 L280,480 L270,440 Z" data-name="Buriram"/>
-                <path class="province" id="nakhon-ratchasima" d="M250,400 L280,390 L300,420 L270,440 L280,480 L250,500 L220,480 L210,430 L230,400 Z" data-name="Nakhon Ratchasima"/>
-
-                <!-- Central Region -->
-                <path class="province" id="nakhon-sawan" d="M160,320 L190,320 L210,350 L200,390 L170,400 L140,370 L130,330 Z" data-name="Nakhon Sawan"/>
-                <path class="province" id="uthai-thani" d="M130,330 L140,370 L130,400 L100,390 L90,350 L100,310 Z" data-name="Uthai Thani"/>
-                <path class="province" id="chainat" d="M140,370 L170,400 L160,430 L130,430 L120,400 L130,400 Z" data-name="Chai Nat"/>
-                <path class="province" id="sing-buri" d="M170,400 L190,410 L190,440 L170,450 L160,430 Z" data-name="Sing Buri"/>
-                <path class="province" id="lop-buri" d="M200,390 L230,400 L230,440 L200,460 L190,440 L190,410 L200,390 Z" data-name="Lop Buri"/>
-                <path class="province" id="saraburi" d="M230,400 L250,400 L260,440 L240,470 L220,460 L230,440 Z" data-name="Saraburi"/>
-                <path class="province" id="ang-thong" d="M170,450 L190,440 L200,460 L190,480 L170,480 Z" data-name="Ang Thong"/>
-                <path class="province" id="ayutthaya" d="M190,480 L200,460 L220,460 L230,480 L220,500 L200,500 Z" data-name="Phra Nakhon Si Ayutthaya"/>
-                <path class="province" id="suphan-buri" d="M130,430 L160,430 L170,450 L170,480 L150,500 L120,490 L110,450 Z" data-name="Suphan Buri"/>
-                <path class="province" id="nakhon-pathom" d="M150,500 L170,480 L190,480 L200,500 L190,530 L160,540 L140,520 Z" data-name="Nakhon Pathom"/>
-                <path class="province" id="nonthaburi" d="M200,500 L220,500 L225,520 L210,530 L195,520 Z" data-name="Nonthaburi"/>
-                <path class="province" id="pathum-thani" d="M220,500 L240,490 L250,510 L240,530 L225,520 Z" data-name="Pathum Thani"/>
-                <path class="province" id="bangkok" d="M195,520 L210,530 L225,520 L240,530 L235,550 L210,560 L190,550 Z" data-name="Bangkok"/>
-                <path class="province" id="samut-prakan" d="M210,560 L235,550 L250,570 L230,590 L210,580 Z" data-name="Samut Prakan"/>
-                <path class="province" id="samut-sakhon" d="M170,550 L190,550 L210,560 L200,580 L175,575 Z" data-name="Samut Sakhon"/>
-                <path class="province" id="samut-songkhram" d="M155,555 L170,550 L175,575 L160,585 L150,570 Z" data-name="Samut Songkhram"/>
-                <path class="province" id="nakhon-nayok" d="M260,440 L280,430 L300,450 L290,480 L270,480 L260,460 Z" data-name="Nakhon Nayok"/>
-                <path class="province" id="prachinburi" d="M280,480 L290,480 L310,490 L320,520 L300,540 L270,520 L260,490 Z" data-name="Prachinburi"/>
-                <path class="province" id="sa-kaeo" d="M320,520 L360,510 L390,530 L380,570 L340,570 L320,550 Z" data-name="Sa Kaeo"/>
-
-                <!-- Eastern Region -->
-                <path class="province" id="chachoengsao" d="M260,490 L270,520 L280,550 L260,570 L240,560 L240,530 L250,510 Z" data-name="Chachoengsao"/>
-                <path class="province" id="chonburi" d="M240,560 L260,570 L270,600 L250,640 L230,630 L220,590 L230,570 Z" data-name="Chonburi"/>
-                <path class="province" id="rayong" d="M270,600 L300,590 L330,610 L310,650 L280,650 L250,640 Z" data-name="Rayong"/>
-                <path class="province" id="chanthaburi" d="M300,540 L340,570 L360,590 L350,640 L310,650 L330,610 L300,590 L280,550 Z" data-name="Chanthaburi"/>
-                <path class="province" id="trat" d="M360,590 L380,570 L400,600 L390,650 L350,640 Z" data-name="Trat"/>
-
-                <!-- Western Region -->
-                <path class="province" id="kanchanaburi" d="M70,350 L100,310 L130,300 L130,330 L100,390 L110,450 L100,500 L70,520 L40,480 L30,400 Z" data-name="Kanchanaburi"/>
-                <path class="province" id="ratchaburi" d="M100,500 L120,490 L150,500 L160,540 L140,570 L110,560 L90,530 Z" data-name="Ratchaburi"/>
-                <path class="province" id="phetchaburi" d="M90,530 L110,560 L120,600 L100,650 L70,640 L60,580 Z" data-name="Phetchaburi"/>
-                <path class="province" id="prachuap-khiri-khan" d="M70,640 L100,650 L110,720 L90,780 L60,800 L50,740 L55,680 Z" data-name="Prachuap Khiri Khan"/>
-
-                <!-- Southern Region - Upper -->
-                <path class="province" id="chumphon" d="M60,800 L90,780 L120,820 L110,880 L80,900 L50,860 Z" data-name="Chumphon"/>
-                <path class="province" id="ranong" d="M30,850 L50,860 L60,920 L40,970 L20,950 L15,890 Z" data-name="Ranong"/>
-                <path class="province" id="surat-thani" d="M60,920 L80,900 L130,910 L160,950 L140,1010 L100,1020 L70,990 L40,970 Z" data-name="Surat Thani"/>
-                <path class="province" id="phang-nga" d="M40,970 L70,990 L60,1050 L30,1080 L10,1050 L20,1000 Z" data-name="Phang Nga"/>
-                <path class="province" id="phuket" d="M25,1100 L45,1090 L50,1130 L35,1150 L20,1130 Z" data-name="Phuket"/>
-                <path class="province" id="krabi" d="M60,1050 L90,1040 L110,1080 L90,1120 L60,1110 L50,1080 Z" data-name="Krabi"/>
-                <path class="province" id="nakhon-si-thammarat" d="M100,1020 L140,1010 L170,1050 L160,1110 L130,1130 L100,1100 L90,1040 Z" data-name="Nakhon Si Thammarat"/>
-                <path class="province" id="trang" d="M60,1110 L90,1120 L100,1160 L80,1190 L50,1180 L45,1140 Z" data-name="Trang"/>
-                <path class="province" id="phatthalung" d="M100,1100 L130,1130 L130,1170 L110,1190 L100,1160 L90,1120 Z" data-name="Phatthalung"/>
-
-                <!-- Southern Region - Lower -->
-                <path class="province" id="satun" d="M45,1180 L80,1190 L90,1240 L60,1270 L30,1250 L35,1210 Z" data-name="Satun"/>
-                <path class="province" id="songkhla" d="M110,1190 L140,1180 L170,1220 L160,1280 L130,1300 L100,1270 L90,1220 Z" data-name="Songkhla"/>
-                <path class="province" id="pattani" d="M160,1280 L190,1270 L210,1300 L190,1330 L160,1320 L150,1290 Z" data-name="Pattani"/>
-                <path class="province" id="yala" d="M100,1270 L130,1300 L140,1350 L110,1370 L80,1340 L80,1290 Z" data-name="Yala"/>
-                <path class="province" id="narathiwat" d="M160,1320 L190,1330 L200,1380 L170,1400 L140,1380 L140,1350 L150,1320 Z" data-name="Narathiwat"/>
-            </svg>
+            <object id="thailand-map" data="/thailand-map.svg" type="image/svg+xml">
+                Your browser does not support SVG
+            </object>
         </div>
 
         <div class="map-legend">
@@ -322,6 +248,8 @@
                 <span>Not Yet Visited</span>
             </div>
         </div>
+
+        <p class="map-credit">Map data from <a href="https://mapsvg.com" target="_blank" rel="noopener">MapSVG</a> (CC BY 4.0)</p>
     </section>
 
     <!-- Tooltip -->
@@ -337,13 +265,14 @@
         // =====================================================
         // THAILAND PROVINCE TRACKER
         // To update: move provinces between the two arrays below
+        // Province names must match exactly as shown in the SVG
         // =====================================================
 
         // PROVINCES I'VE VISITED
         const visitedProvinces = [
             'Chiang Mai',
             'Loei',
-            'Bangkok',
+            'Krung Thep Maha Nakhon (Bangkok)',
             'Nonthaburi',
             'Pathum Thani',
             'Samut Prakan',
@@ -355,7 +284,7 @@
             'Ratchaburi',
             'Phetchaburi',
             'Prachuap Khiri Khan',
-            'Chonburi',
+            'Chon Buri',
             'Rayong',
             'Chanthaburi',
             'Nong Khai',
@@ -366,7 +295,7 @@
             'Chumphon',
             'Ranong',
             'Surat Thani',
-            'Phang Nga',
+            'Phangnga',
             'Phuket',
             'Krabi',
             'Trang',
@@ -401,9 +330,9 @@
             'Yasothon',
             'Amnat Charoen',
             'Ubon Ratchathani',
-            'Sisaket',
+            'Si Sa Ket',
             'Surin',
-            'Buriram',
+            'Buri Ram',
             'Nakhon Sawan',
             'Uthai Thani',
             'Chai Nat',
@@ -413,7 +342,7 @@
             'Suphan Buri',
             'Samut Songkhram',
             'Nakhon Nayok',
-            'Prachinburi',
+            'Prachin Buri',
             'Sa Kaeo',
             'Chachoengsao',
             'Trat',
@@ -429,7 +358,7 @@
         // =====================================================
 
         document.addEventListener('DOMContentLoaded', function() {
-            const provinces = document.querySelectorAll('.province');
+            const mapObject = document.getElementById('thailand-map');
             const tooltip = document.getElementById('tooltip');
 
             // Update stats
@@ -440,28 +369,53 @@
             document.getElementById('visited-count').textContent = visitedCount;
             document.getElementById('percent-count').textContent = percent + '%';
 
-            // Mark visited provinces
-            provinces.forEach(province => {
-                const provinceName = province.getAttribute('data-name');
+            // Wait for SVG to load
+            mapObject.addEventListener('load', function() {
+                const svgDoc = mapObject.contentDocument;
+                const provinces = svgDoc.querySelectorAll('path');
 
-                if (visitedProvinces.includes(provinceName)) {
-                    province.classList.add('visited');
+                provinces.forEach(province => {
+                    const provinceName = province.getAttribute('title');
+
+                    if (visitedProvinces.includes(provinceName)) {
+                        province.classList.add('visited');
+                    }
+
+                    // Apply styles directly to SVG elements
+                    province.style.fill = visitedProvinces.includes(provinceName) ? '#e07a5f' : '#e8dfd0';
+                    province.style.stroke = '#fff';
+                    province.style.strokeWidth = '0.5';
+                    province.style.transition = 'fill 0.2s ease';
+                    province.style.cursor = 'pointer';
+
+                    // Tooltip events
+                    province.addEventListener('mouseenter', function(e) {
+                        if (provinceName && provinceName !== 'Lake Songkhla') {
+                            tooltip.textContent = provinceName + (visitedProvinces.includes(provinceName) ? ' ✓' : '');
+                            tooltip.classList.add('visible');
+                            // Hover color
+                            this.style.fill = visitedProvinces.includes(provinceName) ? '#c45d42' : '#4a9fb0';
+                        }
+                    });
+
+                    province.addEventListener('mousemove', function(e) {
+                        tooltip.style.left = e.clientX + 15 + 'px';
+                        tooltip.style.top = e.clientY + 15 + 'px';
+                    });
+
+                    province.addEventListener('mouseleave', function() {
+                        tooltip.classList.remove('visible');
+                        // Reset color
+                        this.style.fill = visitedProvinces.includes(provinceName) ? '#e07a5f' : '#e8dfd0';
+                    });
+                });
+
+                // Style the lake differently
+                const lake = svgDoc.querySelector('[title="Lake Songkhla"]');
+                if (lake) {
+                    lake.style.fill = '#4a9fb0';
+                    lake.style.cursor = 'default';
                 }
-
-                // Tooltip events
-                province.addEventListener('mouseenter', function(e) {
-                    tooltip.textContent = provinceName;
-                    tooltip.classList.add('visible');
-                });
-
-                province.addEventListener('mousemove', function(e) {
-                    tooltip.style.left = e.clientX + 15 + 'px';
-                    tooltip.style.top = e.clientY + 15 + 'px';
-                });
-
-                province.addEventListener('mouseleave', function() {
-                    tooltip.classList.remove('visible');
-                });
             });
         });
     </script>
