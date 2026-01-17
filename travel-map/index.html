@@ -411,21 +411,23 @@
                     });
 
                     province.addEventListener('mousemove', function(e) {
-                        const tooltipRect = tooltip.getBoundingClientRect();
                         const padding = 15;
+                        // Estimate tooltip size (or use actual if available)
+                        const tooltipWidth = tooltip.offsetWidth || 200;
+                        const tooltipHeight = tooltip.offsetHeight || 40;
 
                         // Calculate position, keeping tooltip within viewport
                         let left = e.clientX + padding;
                         let top = e.clientY + padding;
 
                         // Check right edge
-                        if (left + tooltipRect.width > window.innerWidth - padding) {
-                            left = e.clientX - tooltipRect.width - padding;
+                        if (left + tooltipWidth > window.innerWidth - padding) {
+                            left = e.clientX - tooltipWidth - padding;
                         }
 
                         // Check bottom edge
-                        if (top + tooltipRect.height > window.innerHeight - padding) {
-                            top = e.clientY - tooltipRect.height - padding;
+                        if (top + tooltipHeight > window.innerHeight - padding) {
+                            top = e.clientY - tooltipHeight - padding;
                         }
 
                         // Check left edge
