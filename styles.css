@@ -876,7 +876,12 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
     .nav-links {
-        display: none;
+        gap: 0.75rem;
+    }
+
+    .nav-links a {
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
     }
 
     .hero {
