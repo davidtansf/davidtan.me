@@ -393,6 +393,27 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }
 
+/* Single column about layout */
+.about-single-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-block {
+    background: var(--sand);
+    padding: 2.5rem;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+}
+
+.about-block:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
 /* Travel Section */
 .travel-section {
     background: var(--sand);
