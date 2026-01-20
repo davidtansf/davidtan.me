@@ -19,6 +19,58 @@
     <meta name="twitter:title" content="{{ page.title }}">
     <meta name="twitter:description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
     <meta name="twitter:image" content="{{ page.image | default: '/images/hero.jpeg' | prepend: site.url }}">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ page.title }}",
+      "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}",
+      "image": "https://davidtan.me{{ page.image | default: '/images/hero.jpeg' }}",
+      "author": {
+        "@type": "Person",
+        "name": "David Tan",
+        "url": "https://davidtan.me"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "David Tan",
+        "url": "https://davidtan.me"
+      },
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://davidtan.me{{ page.url }}"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://davidtan.me"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://davidtan.me/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ page.title }}",
+          "item": "https://davidtan.me{{ page.url }}"
+        }
+      ]
+    }
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

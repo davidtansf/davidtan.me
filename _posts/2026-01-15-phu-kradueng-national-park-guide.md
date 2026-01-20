@@ -5,6 +5,29 @@ date: 2026-01-15
 category: Travel
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelGuide",
+  "name": "Phu Kradueng National Park: Complete Guide",
+  "description": "Everything you need to know about hiking Phu Kradueng in Loei Province. Practical tips on leeches, food, accommodation, and what to expect at the top.",
+  "author": {
+    "@type": "Person",
+    "name": "David Tan"
+  },
+  "datePublished": "2026-01-15",
+  "touristDestination": {
+    "@type": "TouristDestination",
+    "name": "Phu Kradueng National Park",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Loei Province",
+      "addressCountry": "Thailand"
+    }
+  }
+}
+</script>
+
 If you're looking for a Thai adventure off the beaten path, Phu Kradueng National Park in Loei Province should be on your list. I recently spent a few days exploring this stunning plateau, and here's everything I wish I'd known before going.
 
 ![Hikers and porters ascending the trail at Phu Kradueng National Park, Loei Province, Thailand](/images/posts/phu-kradueng/hiking-trail.jpg)
