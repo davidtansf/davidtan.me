@@ -1,6 +1,25 @@
 // ===== Dynamic Copyright Year =====
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// ===== Hamburger Menu Toggle =====
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+
+// Close mobile menu when clicking a link
+mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
 
 // ===== Back to Top Button =====
 const backToTop = document.getElementById('backToTop');
