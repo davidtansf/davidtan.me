@@ -7,7 +7,7 @@ category: Travel
 
 If you're looking for a Thai adventure off the beaten path, Phu Kradueng National Park in Loei Province should be on your list. I recently spent a few days exploring this stunning plateau, and here's everything I wish I'd known before going.
 
-![Hiking the trails of Phu Kradueng](/images/posts/phu-kradueng/hiking-trail.jpg)
+![Hikers and porters ascending the trail at Phu Kradueng National Park, Loei Province, Thailand](/images/posts/phu-kradueng/hiking-trail.jpg)
 
 ## Watch Out for the Leeches!
 
@@ -19,9 +19,9 @@ I learned this the hard way when a friend woke up in the middle of the night wit
 
 The landscape at the top surprised me. It's not the dense jungle you might expect—it's more like an African savannah with open grasslands, pine trees, and incredible viewpoints. The terrain is unique and absolutely worth the climb.
 
-![The savannah-like landscape at the top](/images/posts/phu-kradueng/savannah-landscape.jpg)
+![Savannah landscape at the summit of Phu Kradueng National Park](/images/posts/phu-kradueng/savannah-landscape.jpg)
 
-![Stunning mountain views](/images/posts/phu-kradueng/mountain-view.jpg)
+![Mountain view from halfway up the Phu Kradueng hiking trail](/images/posts/phu-kradueng/mountain-view.jpg)
 
 ## A Small Town on a Mountain
 
@@ -31,7 +31,7 @@ Once you reach the top, you'll find it's bustling with activity. There are resta
 - **Massage services** - Trust me, after the hike up, you'll want one. It's so good after a long day of hiking or biking!
 - **Bike rentals** - A great way to explore, though navigating around walkers on shared trails can be tricky
 
-![Camping area with a rainbow](/images/posts/phu-kradueng/camping-rainbow.jpg)
+![Rainbow over campsite at Phu Kradueng National Park](/images/posts/phu-kradueng/camping-rainbow.jpg)
 
 ## Look Up at Night
 
@@ -46,7 +46,7 @@ Not all food up here is created equal. Here are my recommendations:
 - **Watermelon** - Get it. After hiking in the heat, nothing is more refreshing
 - **The coffee shop at the end of the trail** - They use Starbucks beans brewed in a moka pot, served in glass tumblers. I got the mocha and it was amazing
 
-![Local egg snack](/images/posts/phu-kradueng/egg-snack.jpg)
+![Kai Song Khrueng (ไข่ทรงเครื่อง), a Thai egg dish with savory toppings](/images/posts/phu-kradueng/egg-snack.jpg)
 
 ### Skip These
 - The breakfast on day 2 at one of the restaurants—the jook (rice porridge), egg-grata, and pentago were disappointing. Go with local recommendations instead.
