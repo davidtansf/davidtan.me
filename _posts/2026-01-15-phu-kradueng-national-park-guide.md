@@ -2,7 +2,7 @@
 title: "Phu Kradueng National Park: Complete Guide (With Lessons Learned)"
 description: "Everything you need to know about hiking Phu Kradueng in Loei Province. Practical tips on leeches, food, accommodation, and what to expect at the top."
 date: 2026-01-15
-category: Travel
+category: travel-guides
 ---
 
 <script type="application/ld+json">

@@ -5,20 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | David Tan - Thailand Travel & Expat Living</title>
-    <meta name="description" content="Travel guides, expat tips, and budgeting advice for Thailand and Southeast Asia. Real experiences from someone who lives here.">
-    <link rel="canonical" href="https://davidtan.me/blog/">
+    <title>Thailand Living | David Tan - Expat Life & Practical Advice</title>
+    <meta name="description" content="Practical advice for expats and long-term residents in Thailand. Visas, apartments, banking, and navigating daily life.">
+    <link rel="canonical" href="https://davidtan.me/blog/thailand-living/">
     <!-- Open Graph -->
-    <meta property="og:title" content="Blog | David Tan - Thailand Travel & Expat Living">
-    <meta property="og:description" content="Travel guides, expat tips, and budgeting advice for Thailand and Southeast Asia. Real experiences from someone who lives here.">
-    <meta property="og:url" content="https://davidtan.me/blog/">
+    <meta property="og:title" content="Thailand Living | David Tan">
+    <meta property="og:description" content="Practical advice for expats and long-term residents in Thailand. Visas, apartments, banking, and navigating daily life.">
+    <meta property="og:url" content="https://davidtan.me/blog/thailand-living/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://davidtan.me/images/hero.jpeg">
     <meta property="og:site_name" content="David Tan">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blog | David Tan - Thailand Travel & Expat Living">
-    <meta name="twitter:description" content="Travel guides, expat tips, and budgeting advice for Thailand and Southeast Asia. Real experiences from someone who lives here.">
+    <meta name="twitter:title" content="Thailand Living | David Tan">
+    <meta name="twitter:description" content="Practical advice for expats and long-term residents in Thailand. Visas, apartments, banking, and navigating daily life.">
     <meta name="twitter:image" content="https://davidtan.me/images/hero.jpeg">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,7 @@
         <nav class="nav-links">
             <a href="/blog" class="active">Blog</a>
             <a href="/#about">About</a>
-            <a href="#newsletter">Subscribe</a>
+            <a href="/blog#newsletter">Subscribe</a>
             <a href="/work-with-me">Work With Me</a>
             <a href="/#contact">Contact</a>
             <a href="https://instagram.com/davidtanbkk" target="_blank" rel="noopener" class="nav-social" aria-label="Instagram">
@@ -59,7 +59,7 @@
     <nav class="mobile-menu" id="mobileMenu">
         <a href="/blog" class="active">Blog</a>
         <a href="/#about">About</a>
-        <a href="#newsletter">Subscribe</a>
+        <a href="/blog#newsletter">Subscribe</a>
         <a href="/work-with-me">Work With Me</a>
         <a href="/#contact">Contact</a>
         <a href="https://instagram.com/davidtanbkk" target="_blank" rel="noopener" class="nav-social" aria-label="Instagram">
@@ -70,27 +70,27 @@
     <!-- Blog Header -->
     <section class="blog-hero">
         <div class="section-header">
-            <span class="section-label">Thoughts & Stories</span>
-            <h1>Blog</h1>
-            <p class="blog-intro">Travel guides, expat tips, and personal finance advice for Thailand and Southeast Asia.</p>
+            <span class="section-label">Expat Life</span>
+            <h1>Thailand Living</h1>
+            <p class="blog-intro">Practical advice for expats and long-term residents in Thailand.</p>
         </div>
     </section>
 
     <!-- Category Navigation -->
     <nav class="blog-categories">
-        <a href="/blog/" class="active">All Posts</a>
+        <a href="/blog/">All Posts</a>
         <a href="/blog/travel-guides/">Travel Guides</a>
-        <a href="/blog/thailand-living/">Thailand Living</a>
+        <a href="/blog/thailand-living/" class="active">Thailand Living</a>
         <a href="/blog/personal-finance/">Personal Finance</a>
     </nav>
 
     <!-- Blog Posts Grid -->
     <section class="blog-section">
         <div class="blog-grid">
-            {% for post in site.posts %}
-            <article class="blog-card" data-category="{{ post.category | downcase }}">
-                <div class="blog-card-image {% if post.category == 'travel-guides' %}travel-gradient{% elsif post.category == 'thailand-living' %}life-gradient{% elsif post.category == 'personal-finance' %}finance-gradient{% else %}travel-gradient{% endif %}">
-                    <span class="category-tag">{% if post.category == 'travel-guides' %}Travel Guides{% elsif post.category == 'thailand-living' %}Thailand Living{% elsif post.category == 'personal-finance' %}Personal Finance{% else %}{{ post.category }}{% endif %}</span>
+            {% for post in site.categories.thailand-living %}
+            <article class="blog-card">
+                <div class="blog-card-image life-gradient">
+                    <span class="category-tag">Thailand Living</span>
                 </div>
                 <div class="blog-card-content">
                     <time class="blog-date">{{ post.date | date: "%B %d, %Y" }}</time>
@@ -101,6 +101,9 @@
             </article>
             {% endfor %}
         </div>
+        {% if site.categories.thailand-living.size == 0 %}
+        <p class="no-posts">No posts in this category yet. Check back soon!</p>
+        {% endif %}
     </section>
 
     <!-- Newsletter Section -->

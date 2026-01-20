@@ -735,12 +735,57 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, var(--palm) 0%, var(--ocean-deep) 100%);
 }
 
+.blog-card-image.travel-gradient {
+    background: linear-gradient(135deg, var(--ocean-light) 0%, var(--ocean-deep) 100%);
+}
+
 .blog-card-image.life-gradient {
     background: linear-gradient(135deg, var(--coral) 0%, var(--gold) 100%);
 }
 
 .blog-card-image.finance-gradient {
     background: linear-gradient(135deg, var(--gold) 0%, var(--palm) 100%);
+}
+
+/* Blog Category Navigation */
+.blog-categories {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0 3rem 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-categories a {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.625rem 1.25rem;
+    background: transparent;
+    border: 1px solid var(--sand-dark);
+    color: var(--text-light);
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.blog-categories a:hover,
+.blog-categories a.active {
+    border-color: var(--ocean);
+    color: var(--ocean);
+    background: var(--sand);
+}
+
+.no-posts {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    padding: 3rem;
+    font-style: italic;
 }
 
 .category-tag {

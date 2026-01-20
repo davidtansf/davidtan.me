@@ -121,7 +121,7 @@
     <!-- Blog Post -->
     <article class="blog-post">
         <header class="post-header">
-            <span class="post-category">{{ page.category }}</span>
+            <span class="post-category">{% if page.category == 'travel-guides' %}Travel Guides{% elsif page.category == 'thailand-living' %}Thailand Living{% elsif page.category == 'personal-finance' %}Personal Finance{% else %}{{ page.category }}{% endif %}</span>
             <h1>{{ page.title }}</h1>
             <time class="post-date">{{ page.date | date: "%B %d, %Y" }}</time>
         </header>
