@@ -6,7 +6,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thailand Travel Map - David Tan</title>
+    <meta name="description" content="Interactive map tracking David Tan's travels across Thailand's 77 provinces. Currently visited: 36 provinces (47% complete).">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Structured data for scrapers -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Thailand Province Travel Map",
+        "description": "Interactive map tracking travels across Thailand's 77 provinces",
+        "author": {
+            "@type": "Person",
+            "name": "David Tan"
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Thailand Provinces Visited",
+            "description": "36 of 77 provinces visited (47% complete)",
+            "numberOfItems": 36,
+            "itemListElement": [
+                "Krung Thep Maha Nakhon (Bangkok)", "Chachoengsao", "Samut Songkhram", "Nakhon Nayok",
+                "Nonthaburi", "Pathum Thani", "Samut Prakan", "Samut Sakhon", "Nakhon Pathom",
+                "Phra Nakhon Si Ayutthaya", "Saraburi", "Kanchanaburi", "Phetchaburi", "Prachuap Khiri Khan",
+                "Chon Buri", "Rayong", "Chanthaburi", "Chiang Mai", "Chiang Rai", "Loei", "Nong Khai",
+                "Khon Kaen", "Chaiyaphum", "Nakhon Ratchasima", "Chumphon", "Surat Thani", "Phuket",
+                "Krabi", "Trang", "Satun", "Songkhla", "Nakhon Si Thammarat", "Phatthalung",
+                "Pattani", "Yala", "Narathiwat"
+            ]
+        }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -218,7 +247,7 @@
         </div>
         <div class="map-stats">
             <div class="stat">
-                <span class="stat-number" id="visited-count">0</span>
+                <span class="stat-number" id="visited-count">36</span>
                 <span class="stat-label">Visited</span>
             </div>
             <div class="stat">
@@ -226,7 +255,7 @@
                 <span class="stat-label">Total</span>
             </div>
             <div class="stat">
-                <span class="stat-number" id="percent-count">0%</span>
+                <span class="stat-number" id="percent-count">47%</span>
                 <span class="stat-label">Complete</span>
             </div>
         </div>
