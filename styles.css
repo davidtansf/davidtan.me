@@ -141,6 +141,25 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+.nav-social {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.nav-social::after {
+    display: none;
+}
+
+.nav-social svg {
+    fill: var(--text-light);
+    transition: fill 0.3s ease;
+}
+
+.nav-social:hover svg {
+    fill: var(--coral);
+}
+
 .theme-toggle {
     background: transparent;
     border: 1px solid var(--sand-dark);
