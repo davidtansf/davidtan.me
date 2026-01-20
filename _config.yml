@@ -1,5 +1,9 @@
 title: David Tan
-description: Discovering the world, one destination at a time
+description: Travel guides, expat living tips, and personal finance advice for Thailand and Southeast Asia.
+
+# Plugins
+plugins:
+  - jekyll-sitemap
 url: "https://davidtan.me"
 
 # Build settings
