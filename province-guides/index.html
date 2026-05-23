@@ -1,0 +1,856 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thailand Province Guides | David Tan</title>
+    <meta name="description" content="What to buy, eat, and bring home from every province in Thailand. A curated souvenir and food guide by someone who's actually been there.">
+    <link rel="canonical" href="https://davidtan.me/province-guides/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Thailand Province Guides | David Tan">
+    <meta property="og:description" content="What to buy, eat, and bring home from every province in Thailand. A curated souvenir and food guide by someone who's actually been there.">
+    <meta property="og:url" content="https://davidtan.me/province-guides/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://davidtan.me/images/hero.jpeg">
+    <meta property="og:site_name" content="David Tan">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thailand Province Guides | David Tan">
+    <meta name="twitter:description" content="What to buy, eat, and bring home from every province in Thailand.">
+    <meta name="twitter:image" content="https://davidtan.me/images/hero.jpeg">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Thailand Province Guides",
+      "url": "https://davidtan.me/province-guides/",
+      "description": "What to buy, eat, and bring home from every province in Thailand.",
+      "author": {
+        "@type": "Person",
+        "name": "David Tan",
+        "url": "https://davidtan.me"
+      }
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v={{ site.time | date: '%s' }}">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REDYTVQ1E6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-REDYTVQ1E6');
+    </script>
+
+    <style>
+        /* ===== Province Guides — Page-specific styles ===== */
+
+        /* Stats bar */
+        .pg-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3.5rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .pg-stat {
+            text-align: center;
+        }
+        .pg-stat-num {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: var(--ocean-deep);
+            display: block;
+            line-height: 1;
+        }
+        .pg-stat-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 0.4rem;
+            font-weight: 400;
+        }
+
+        /* Search control */
+        .pg-controls {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem 0;
+        }
+        .pg-search-wrap {
+            position: relative;
+        }
+        .pg-search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            pointer-events: none;
+        }
+        #pg-search {
+            width: 100%;
+            background: var(--sand);
+            border: 1px solid var(--sand-dark);
+            border-radius: 50px;
+            padding: 0.9rem 1.5rem 0.9rem 3rem;
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 300;
+            outline: none;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        #pg-search::placeholder { color: var(--text-light); }
+        #pg-search:focus {
+            border-color: var(--ocean-light);
+            box-shadow: 0 0 0 3px rgba(74, 159, 176, 0.12);
+            background: var(--cream);
+        }
+
+        /* Results count */
+        .pg-results-count {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        /* Province grid */
+        .pg-grid-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem 6rem;
+        }
+        .province-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Province cards */
+        .province-card {
+            background: var(--sand);
+            border-radius: 20px;
+            padding: 1.75rem;
+            transition: all 0.35s ease;
+            min-height: 155px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .province-card.published {
+            cursor: pointer;
+        }
+        .province-card.published:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lift);
+            background: var(--cream);
+        }
+        .province-card.coming-soon {
+            opacity: 0.55;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .card-province-name {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--ocean-deep);
+            line-height: 1.2;
+        }
+        .province-card.coming-soon .card-province-name {
+            color: var(--text-light);
+        }
+        .card-province-thai {
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-top: 0.15rem;
+            font-weight: 300;
+        }
+        .card-region-label {
+            font-family: var(--font-body);
+            font-size: 0.68rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+            font-weight: 400;
+        }
+        .card-badge {
+            font-family: var(--font-body);
+            font-size: 0.68rem;
+            font-weight: 400;
+            padding: 0.3rem 0.8rem;
+            background: var(--cream);
+            color: var(--coral);
+            border: 1px solid var(--sand-dark);
+            border-radius: 50px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+        .province-tag {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            background: var(--cream);
+            color: var(--text-light);
+            border-radius: 4px;
+            padding: 0.2rem 0.6rem;
+            font-weight: 400;
+            border: 1px solid var(--sand-dark);
+        }
+        .soon-label {
+            margin-top: auto;
+            padding-top: 1rem;
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            color: var(--text-light);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        /* Arrow hint on hover for published cards */
+        .province-card.published::after {
+            content: '→';
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.75rem;
+            color: var(--coral);
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateX(-5px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .province-card.published:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Empty state */
+        .pg-empty {
+            display: none;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 1rem;
+        }
+        .pg-empty.visible { display: block; }
+
+        /* ===== Detail Drawer ===== */
+        .detail-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 58, 74, 0.5);
+            z-index: 1100;
+            backdrop-filter: blur(4px);
+        }
+        .detail-overlay.open { display: block; }
+
+        .detail-drawer {
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: min(520px, 100vw);
+            background: var(--cream);
+            border-left: 1px solid var(--sand-dark);
+            z-index: 1101;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -8px 0 40px rgba(0, 0, 0, 0.1);
+        }
+        .detail-drawer.open { transform: translateX(0); }
+
+        .drawer-inner {
+            padding: 2.5rem;
+            position: relative;
+        }
+        .drawer-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: 1px solid var(--sand-dark);
+            color: var(--text-light);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .drawer-close:hover {
+            border-color: var(--coral);
+            color: var(--coral);
+            background: var(--sand);
+        }
+
+        .drawer-region-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .drawer-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--ocean-deep);
+            line-height: 1.2;
+            margin-bottom: 0.2rem;
+        }
+        .drawer-thai {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 300;
+            margin-bottom: 2.25rem;
+            display: block;
+        }
+
+        .drawer-section {
+            margin-bottom: 2rem;
+        }
+        .drawer-section-heading {
+            font-family: var(--font-body);
+            font-size: 0.68rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--sand-dark);
+        }
+
+        .souvenir-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .souvenir-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        .souvenir-name {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--ocean-deep);
+            line-height: 1.3;
+        }
+        .souvenir-thai {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+        .souvenir-type {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.62rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.18rem 0.55rem;
+            border-radius: 3px;
+            margin-top: 0.25rem;
+            width: fit-content;
+            font-weight: 400;
+        }
+        /* Type badge colours — tuned for the light cream background */
+        .type-food   { background: #eef5ec; color: #3d7a2d; border: 1px solid #bdd9b5; }
+        .type-craft  { background: #eceff8; color: #4a52a0; border: 1px solid #b8bedd; }
+        .type-gem    { background: #f5ecf5; color: #8a4a8a; border: 1px solid #dbb8db; }
+        .type-fresh  { background: #fdf4e7; color: #9a6418; border: 1px solid #e8d09a; }
+
+        .souvenir-note {
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-top: 0.3rem;
+            font-weight: 300;
+        }
+
+        .drawer-tip {
+            background: var(--sand);
+            border: 1px solid var(--sand-dark);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem 1.5rem;
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            color: var(--text-light);
+            line-height: 1.75;
+            font-weight: 300;
+        }
+        .drawer-tip strong {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .pg-controls,
+            .pg-results-count,
+            .pg-grid-wrap {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            .pg-stats { gap: 2rem; }
+            .province-grid { grid-template-columns: 1fr 1fr; }
+            .drawer-inner { padding: 2rem 1.5rem; }
+        }
+        @media (max-width: 540px) {
+            .province-grid { grid-template-columns: 1fr; }
+            .pg-controls,
+            .pg-results-count,
+            .pg-grid-wrap {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .pg-stats { gap: 1.5rem; }
+            .pg-stat-num { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="nav-header">
+        <a href="/" class="logo"><img src="/favicon.svg" alt="David Tan" class="logo-icon"></a>
+        <nav class="nav-links">
+            <a href="/blog">Blog</a>
+            <a href="/#about">About</a>
+            <a href="/blog#newsletter">Subscribe</a>
+            <a href="/consulting">Consulting</a>
+            <a href="/province-guides" class="active">Province Guides</a>
+            <a href="/#contact">Contact</a>
+            <a href="https://instagram.com/davidtanbkk" target="_blank" rel="noopener" class="nav-social" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="/blog">Blog</a>
+        <a href="/#about">About</a>
+        <a href="/blog#newsletter">Subscribe</a>
+        <a href="/consulting">Consulting</a>
+        <a href="/province-guides" class="active">Province Guides</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://instagram.com/davidtanbkk" target="_blank" rel="noopener" class="nav-social" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="blog-hero">
+        <div class="section-header">
+            <span class="section-label">Thailand Province Guides</span>
+            <h1>What to bring home from every corner of Thailand</h1>
+            <p class="blog-intro">A curated guide to the best local products, souvenirs, and foods from each province — written by someone who's actually been there.</p>
+        </div>
+        <div class="pg-stats">
+            <div class="pg-stat">
+                <span class="pg-stat-num" id="published-count">1</span>
+                <span class="pg-stat-label">Published</span>
+            </div>
+            <div class="pg-stat">
+                <span class="pg-stat-num">77</span>
+                <span class="pg-stat-label">Provinces</span>
+            </div>
+            <div class="pg-stat">
+                <span class="pg-stat-num">6</span>
+                <span class="pg-stat-label">Regions</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Region Filter Nav — reuses existing .blog-categories styles -->
+    <nav class="blog-categories" id="region-filters">
+        <a href="#" class="active" data-region="all">All Regions</a>
+        <a href="#" data-region="north">North</a>
+        <a href="#" data-region="northeast">Northeast (Isan)</a>
+        <a href="#" data-region="central">Central</a>
+        <a href="#" data-region="east">East</a>
+        <a href="#" data-region="west">West</a>
+        <a href="#" data-region="south">South</a>
+    </nav>
+
+    <!-- Search -->
+    <div class="pg-controls">
+        <div class="pg-search-wrap">
+            <svg class="pg-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input id="pg-search" type="text" placeholder="Search provinces or souvenirs…" autocomplete="off" />
+        </div>
+    </div>
+
+    <!-- Results Count + Grid -->
+    <p class="pg-results-count" id="pg-results-count"></p>
+    <div class="pg-grid-wrap">
+        <div class="province-grid" id="province-grid"></div>
+        <div class="pg-empty" id="pg-empty">No provinces match your search.</div>
+    </div>
+
+    <!-- Detail Drawer -->
+    <div class="detail-overlay" id="overlay"></div>
+    <aside class="detail-drawer" id="drawer" aria-label="Province detail">
+        <div class="drawer-inner">
+            <button class="drawer-close" id="drawer-close" aria-label="Close">✕</button>
+            <span class="drawer-region-label" id="d-region"></span>
+            <h2 class="drawer-title" id="d-title"></h2>
+            <span class="drawer-thai" id="d-thai"></span>
+            <div id="d-body"></div>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> David Tan</p>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+    </footer>
+
+    <script src="/script.js?v={{ site.time | date: '%s' }}"></script>
+    <script>
+    /* ==========================================================
+       PROVINCE DATA
+       To publish a new province:
+         1. Set published: true
+         2. Add a souvenirs[] array (see Kanchanaburi as template)
+         3. Add a tags[] array (3–5 key products shown on the card)
+         4. Optionally add a tip string (HTML allowed)
+    ========================================================== */
+    const PROVINCES = [
+
+      /* ── WEST ─────────────────────────────────────────────── */
+      {
+        id: "kanchanaburi",
+        name: "Kanchanaburi", thai: "กาญจนบุรี",
+        region: "west", regionLabel: "Western Thailand",
+        published: true,
+        tags: ["Glass Noodles", "Tamarind", "Termite Mushrooms", "Melons"],
+        souvenirs: [
+          {
+            name: "Tha Ruea Glass Noodles", thai: "วุ้นเส้นท่าเรือ", type: "food",
+            note: "The most famous product from Kanchanaburi. Made from 100% mung beans with no additives — chewy texture, premium quality. Sought after nationwide by home cooks. Easy to pack and carry."
+          },
+          {
+            name: "Tamarind Paste", thai: "มะขามกวน", type: "food",
+            note: "A classic Thai souvenir done especially well here. Sweet, sour, and salty in one sticky bite. Look for 'Ta Kaew' brand at local souvenir shops — multiple flavour variations available."
+          },
+          {
+            name: "Termite Mushrooms", thai: "เห็ดโคนเมืองกาญจน์", type: "fresh",
+            note: "A wild seasonal delicacy, not farm-grown. Appears after rains in a symbiotic relationship with termite colonies — impossible to cultivate at scale, hence the price. Best eaten fresh; buy from markets, not as a take-home."
+          },
+          {
+            name: "Cantaloupe & Melons", thai: "เมลอน", type: "fresh",
+            note: "Kanchanaburi's farms produce excellent melons. More of a 'eat while you're here' buy — try at local cafés or grab one from a roadside market. Not practical as a souvenir to carry far."
+          },
+          {
+            name: "Jungle Curry Paste", thai: "พริกแกงป่า", type: "food",
+            note: "An OTOP product unique to the region. Rich, fiery, and deeply aromatic — captures the flavour of Kanchanaburi's jungle dishes. Packaged for travel; great gift for anyone who cooks Thai food."
+          },
+          {
+            name: "Sapphire & Onyx Gemstones", thai: "อัญมณีบ่อพลอย", type: "gem",
+            note: "From the famous Bo Ploy mining district. Both raw stones and finished jewellery available. Genuine pieces make elegant, distinctive gifts — but know your source. Visit the Bo Ploy market for the best selection."
+          },
+          {
+            name: "Royal Sarim Dessert", thai: "ซาหริ่มชาววัง", type: "food",
+            note: "Traditional dessert made from 100% mung bean flour using an old court recipe. Thin, chewy, subtly sweet strands — hard to find outside Kanchanaburi. Same producers as the famous glass noodles."
+          },
+          {
+            name: "Ban Nong Khao Handwoven Fabric", thai: "ผ้าทอบ้านหนองขาว", type: "craft",
+            note: "Handmade by a local weaving community in Tha Mueang district. Durable, colourful, with intricate patterns — a genuine local craft product that directly supports the village economy."
+          }
+        ],
+        tip: "<strong>Local tip:</strong> The glass noodles and Royal Sarim dessert come from the same producers at Tha Ruea pier. If you're buying the noodles anyway, grab the Sarim too — most visitors don't know it exists."
+      },
+      { id: "ratchaburi",   name: "Ratchaburi",          thai: "ราชบุรี",            region: "west",      regionLabel: "Western Thailand",   published: false },
+      { id: "suphan-buri",  name: "Suphan Buri",          thai: "สุพรรณบุรี",         region: "west",      regionLabel: "Western Thailand",   published: false },
+      { id: "phetchaburi",  name: "Phetchaburi",          thai: "เพชรบุรี",           region: "west",      regionLabel: "Western Thailand",   published: false },
+      { id: "prachuap",     name: "Prachuap Khiri Khan",  thai: "ประจวบคีรีขันธ์",   region: "west",      regionLabel: "Western Thailand",   published: false },
+
+      /* ── NORTH ────────────────────────────────────────────── */
+      { id: "chiang-mai",     name: "Chiang Mai",       thai: "เชียงใหม่",    region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "chiang-rai",     name: "Chiang Rai",       thai: "เชียงราย",     region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "mae-hong-son",   name: "Mae Hong Son",     thai: "แม่ฮ่องสอน",  region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "nan",            name: "Nan",              thai: "น่าน",         region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "phayao",         name: "Phayao",           thai: "พะเยา",        region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "phrae",          name: "Phrae",            thai: "แพร่",         region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "lampang",        name: "Lampang",          thai: "ลำปาง",        region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "lamphun",        name: "Lamphun",          thai: "ลำพูน",        region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "tak",            name: "Tak",              thai: "ตาก",          region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "sukhothai",      name: "Sukhothai",        thai: "สุโขทัย",      region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "uttaradit",      name: "Uttaradit",        thai: "อุตรดิตถ์",    region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "phitsanulok",    name: "Phitsanulok",      thai: "พิษณุโลก",     region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "phichit",        name: "Phichit",          thai: "พิจิตร",       region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "kamphaeng-phet", name: "Kamphaeng Phet",   thai: "กำแพงเพชร",    region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "phetchabun",     name: "Phetchabun",       thai: "เพชรบูรณ์",    region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "nakhon-sawan",   name: "Nakhon Sawan",     thai: "นครสวรรค์",    region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "uthai-thani",    name: "Uthai Thani",      thai: "อุทัยธานี",    region: "north", regionLabel: "Northern Thailand", published: false },
+      { id: "chai-nat",       name: "Chai Nat",         thai: "ชัยนาท",       region: "north", regionLabel: "Northern Thailand", published: false },
+
+      /* ── NORTHEAST (ISAN) ─────────────────────────────────── */
+      { id: "khon-kaen",        name: "Khon Kaen",          thai: "ขอนแก่น",      region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "udon-thani",       name: "Udon Thani",          thai: "อุดรธานี",     region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "nakhon-ratchasima",name: "Nakhon Ratchasima",   thai: "นครราชสีมา",   region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "ubon-ratchathani", name: "Ubon Ratchathani",    thai: "อุบลราชธานี",  region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "roi-et",           name: "Roi Et",              thai: "ร้อยเอ็ด",     region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "sakon-nakhon",     name: "Sakon Nakhon",        thai: "สกลนคร",       region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "nakhon-phanom",    name: "Nakhon Phanom",       thai: "นครพนม",       region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "loei",             name: "Loei",                thai: "เลย",          region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "nong-khai",        name: "Nong Khai",           thai: "หนองคาย",      region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "bueng-kan",        name: "Bueng Kan",           thai: "บึงกาฬ",       region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "maha-sarakham",    name: "Maha Sarakham",       thai: "มหาสารคาม",    region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "kalasin",          name: "Kalasin",             thai: "กาฬสินธุ์",    region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "mukdahan",         name: "Mukdahan",            thai: "มุกดาหาร",     region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "yasothon",         name: "Yasothon",            thai: "ยโสธร",        region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "amnat-charoen",    name: "Amnat Charoen",       thai: "อำนาจเจริญ",   region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "sisaket",          name: "Si Sa Ket",           thai: "ศรีสะเกษ",     region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "surin",            name: "Surin",               thai: "สุรินทร์",     region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "buri-ram",         name: "Buri Ram",            thai: "บุรีรัมย์",    region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "chaiyaphum",       name: "Chaiyaphum",          thai: "ชัยภูมิ",      region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+      { id: "nong-bua-lamphu",  name: "Nong Bua Lam Phu",   thai: "หนองบัวลำภู",  region: "northeast", regionLabel: "Northeast (Isan)", published: false },
+
+      /* ── CENTRAL ──────────────────────────────────────────── */
+      { id: "bangkok",          name: "Bangkok",             thai: "กรุงเทพมหานคร",        region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "ayutthaya",        name: "Ayutthaya",           thai: "พระนครศรีอยุธยา",      region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "nonthaburi",       name: "Nonthaburi",          thai: "นนทบุรี",              region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "pathum-thani",     name: "Pathum Thani",        thai: "ปทุมธานี",             region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "samut-prakan",     name: "Samut Prakan",        thai: "สมุทรปราการ",          region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "samut-sakhon",     name: "Samut Sakhon",        thai: "สมุทรสาคร",            region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "samut-songkhram",  name: "Samut Songkhram",     thai: "สมุทรสงคราม",          region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "nakhon-pathom",    name: "Nakhon Pathom",       thai: "นครปฐม",               region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "ang-thong",        name: "Ang Thong",           thai: "อ่างทอง",              region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "sing-buri",        name: "Sing Buri",           thai: "สิงห์บุรี",            region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "lop-buri",         name: "Lop Buri",            thai: "ลพบุรี",               region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "sara-buri",        name: "Sara Buri",           thai: "สระบุรี",              region: "central", regionLabel: "Central Thailand", published: false },
+      { id: "nakhon-nayok",     name: "Nakhon Nayok",        thai: "นครนายก",              region: "central", regionLabel: "Central Thailand", published: false },
+
+      /* ── EAST ─────────────────────────────────────────────── */
+      { id: "chonburi",      name: "Chon Buri",      thai: "ชลบุรี",        region: "east", regionLabel: "Eastern Thailand", published: false },
+      { id: "rayong",        name: "Rayong",         thai: "ระยอง",         region: "east", regionLabel: "Eastern Thailand", published: false },
+      { id: "chanthaburi",   name: "Chanthaburi",    thai: "จันทบุรี",      region: "east", regionLabel: "Eastern Thailand", published: false },
+      { id: "trat",          name: "Trat",           thai: "ตราด",          region: "east", regionLabel: "Eastern Thailand", published: false },
+      { id: "prachin-buri",  name: "Prachin Buri",   thai: "ปราจีนบุรี",   region: "east", regionLabel: "Eastern Thailand", published: false },
+      { id: "sa-kaeo",       name: "Sa Kaeo",        thai: "สระแก้ว",       region: "east", regionLabel: "Eastern Thailand", published: false },
+      { id: "chachoengsao",  name: "Chachoengsao",   thai: "ฉะเชิงเทรา",   region: "east", regionLabel: "Eastern Thailand", published: false },
+
+      /* ── SOUTH ────────────────────────────────────────────── */
+      { id: "phuket",               name: "Phuket",               thai: "ภูเก็ต",            region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "krabi",                name: "Krabi",                thai: "กระบี่",            region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "surat-thani",          name: "Surat Thani",          thai: "สุราษฎร์ธานี",      region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "nakhon-si-thammarat",  name: "Nakhon Si Thammarat",  thai: "นครศรีธรรมราช",    region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "songkhla",             name: "Songkhla",             thai: "สงขลา",             region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "phatthalung",          name: "Phatthalung",          thai: "พัทลุง",            region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "trang",                name: "Trang",                thai: "ตรัง",              region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "satun",                name: "Satun",                thai: "สตูล",              region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "pattani",              name: "Pattani",              thai: "ปัตตานี",           region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "yala",                 name: "Yala",                 thai: "ยะลา",              region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "narathiwat",           name: "Narathiwat",           thai: "นราธิวาส",          region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "chumphon",             name: "Chumphon",             thai: "ชุมพร",             region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "ranong",               name: "Ranong",               thai: "ระนอง",             region: "south", regionLabel: "Southern Thailand", published: false },
+      { id: "phang-nga",            name: "Phang Nga",            thai: "พังงา",             region: "south", regionLabel: "Southern Thailand", published: false },
+
+    ];
+
+    /* ==========================================================
+       STATE
+    ========================================================== */
+    let activeRegion = 'all';
+    let searchQuery  = '';
+
+    /* ==========================================================
+       RENDER GRID
+    ========================================================== */
+    function renderGrid() {
+      const grid    = document.getElementById('province-grid');
+      const empty   = document.getElementById('pg-empty');
+      const countEl = document.getElementById('pg-results-count');
+      const q       = searchQuery.toLowerCase();
+
+      const filtered = PROVINCES.filter(p => {
+        const regionMatch = activeRegion === 'all' || p.region === activeRegion;
+        const textMatch   = !q
+          || p.name.toLowerCase().includes(q)
+          || p.thai.includes(q)
+          || (p.tags      || []).some(t => t.toLowerCase().includes(q))
+          || (p.souvenirs || []).some(s => s.name.toLowerCase().includes(q));
+        return regionMatch && textMatch;
+      });
+
+      grid.innerHTML = filtered.map(p => {
+        if (p.published) {
+          const tags  = (p.tags || []).slice(0, 3).map(t => `<span class="province-tag">${t}</span>`).join('');
+          const extra = (p.tags || []).length > 3
+            ? `<span class="province-tag">+${p.tags.length - 3} more</span>` : '';
+          return `
+            <div class="province-card published" data-id="${p.id}"
+                 role="button" tabindex="0" aria-label="Open ${p.name} guide">
+              <div class="card-top">
+                <div>
+                  <div class="card-province-name">${p.name}</div>
+                  <div class="card-province-thai">${p.thai}</div>
+                  <div class="card-region-label">${p.regionLabel}</div>
+                </div>
+                <span class="card-badge">${p.souvenirs.length} items</span>
+              </div>
+              <div class="card-tags">${tags}${extra}</div>
+            </div>`;
+        } else {
+          return `
+            <div class="province-card coming-soon" aria-label="${p.name} — coming soon">
+              <div class="card-top">
+                <div>
+                  <div class="card-province-name">${p.name}</div>
+                  <div class="card-province-thai">${p.thai}</div>
+                  <div class="card-region-label">${p.regionLabel}</div>
+                </div>
+              </div>
+              <div class="soon-label">Coming soon</div>
+            </div>`;
+        }
+      }).join('');
+
+      const visible = filtered.length;
+      countEl.textContent = visible === PROVINCES.length
+        ? `${visible} provinces`
+        : `${visible} of ${PROVINCES.length} provinces`;
+
+      empty.classList.toggle('visible', visible === 0);
+
+      // Click + keyboard listeners
+      grid.querySelectorAll('.province-card.published').forEach(el => {
+        el.addEventListener('click', () => openDrawer(el.dataset.id));
+        el.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDrawer(el.dataset.id); }
+        });
+      });
+    }
+
+    /* ==========================================================
+       DETAIL DRAWER
+    ========================================================== */
+    const TYPE_LABELS = {
+      food:  'Food',
+      craft: 'Craft',
+      gem:   'Gem & Jewellery',
+      fresh: 'Fresh Produce'
+    };
+
+    function openDrawer(id) {
+      const p = PROVINCES.find(x => x.id === id);
+      if (!p || !p.published) return;
+
+      document.getElementById('d-region').textContent = p.regionLabel;
+      document.getElementById('d-title').textContent  = p.name;
+      document.getElementById('d-thai').textContent   = p.thai;
+
+      const souvHtml = p.souvenirs.map(s => `
+        <li class="souvenir-item">
+          <span class="souvenir-name">${s.name}</span>
+          ${s.thai ? `<span class="souvenir-thai">${s.thai}</span>` : ''}
+          <span class="souvenir-type type-${s.type}">${TYPE_LABELS[s.type] || s.type}</span>
+          <span class="souvenir-note">${s.note}</span>
+        </li>`).join('');
+
+      document.getElementById('d-body').innerHTML = `
+        <div class="drawer-section">
+          <p class="drawer-section-heading">What to Buy</p>
+          <ul class="souvenir-list">${souvHtml}</ul>
+        </div>
+        ${p.tip ? `<div class="drawer-tip">${p.tip}</div>` : ''}`;
+
+      document.getElementById('overlay').classList.add('open');
+      document.getElementById('drawer').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      document.getElementById('overlay').classList.remove('open');
+      document.getElementById('drawer').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ==========================================================
+       EVENTS
+    ========================================================== */
+    document.getElementById('pg-search').addEventListener('input', e => {
+      searchQuery = e.target.value;
+      renderGrid();
+    });
+
+    document.getElementById('region-filters').addEventListener('click', e => {
+      e.preventDefault();
+      const link = e.target.closest('a[data-region]');
+      if (!link) return;
+      document.querySelectorAll('#region-filters a').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+      activeRegion = link.dataset.region;
+      renderGrid();
+    });
+
+    document.getElementById('overlay').addEventListener('click', closeDrawer);
+    document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+    /* ==========================================================
+       INIT
+    ========================================================== */
+    document.getElementById('published-count').textContent =
+      PROVINCES.filter(p => p.published).length;
+
+    renderGrid();
+    </script>
+</body>
+</html>
