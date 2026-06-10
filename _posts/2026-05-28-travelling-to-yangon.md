@@ -76,6 +76,70 @@ Consider walking if the destination isn't too far. I loved walking around Yangon
 
 There is also the Circular Train route, boarding at Yangon Central Railway Station, which loops through the suburbs and back. It's more of a sightseeing experience than a practical way to get around the city, which I'll cover more below.
 
----
+## Where to Stay
 
-*Sections on where to stay, what to eat, and what to see are coming soon. Have questions in the meantime? Reach out at [hello@davidtan.me](mailto:hello@davidtan.me).*
+Hotels in Yangon are remarkably affordable right now. The price difference between a standard vs luxury hotel is not that much. You could be paying $25 USD for a room at a standard place, or for only $65 USD, you can even stay at a 5-star property.
+
+I stayed at the **Pan Pacific Hotel** because it was centrally located (5 minute walk to Bogyoke Aung San Market) and convenient. It's also next to a mall, and I ducked in regularly for coffee or a snack from the supermarket. I paid under $100 USD for a mid-tier room, and I was even upgraded to the junior suite during my entire stay there. Their service and hospitality were exceptional (courteous and friendly), as were the amenities including a spacious outdoor pool with views of Shwedagon Pagoda and a well-equipped gym, which is rare in hotels.
+
+**The Strand Hotel Yangon** – probably the most storied hotel in the entire country. Originally opened in 1901 by the Sarkies Brothers, who also built the E&O Hotel in Penang, Malaysia and, most famously, the Raffles Hotel in Singapore. Walking through its interior takes you back to a different time. I was closely considering this hotel for its historic significance but decided on the Pan Pacific since I wanted something more modern. Even if you don't stay here, it's still worth a visit.
+
+**The Eravati Sule Grand Yangon** – formerly a Rosewood property, housed in a colonial-era building that once served as the New Law Courts. Walk up the staircase to the lobby and you get a real sense of its history.
+
+**Governor's Residence** – served as the home of the British governors of Burma until the mid 20th century. It's set away from the downtown area and has a more serene and romantic feel to it. Great if you're looking to relax after a day of exploring the more vibrant parts of the city.
+
+There are plenty of hotels in the city. Agoda, Booking, or Google are your best tools for finding the right price point. Airbnb is not available in Myanmar due to the current political situation.
+
+## What to Eat
+
+I wasn't an expert on Burmese cuisine before arriving, and after four days there I realized I know even less. Burmese food tradition is so diverse and vast, not to mention the distinct cuisines from the many ethnic regions that make up Myanmar. A few iconic dishes to know:
+
+**Mohinga** (မုန့်ဟင်းခါး) – fish-based broth with thin rice noodles, typically eaten for breakfast.
+
+**Laphet** (လက်ဖက်) – pickled tea leaves used in salad (laphet thoke) and various other dishes.
+
+**Shan tofu** (တိုဟူး) – despite the name, contains no soy. It's made from chickpeas, which gives it its yellow color. Excellent deep fried.
+
+These were my favorite restaurants:
+
+**Rangoon Tea House Golden Valley**
+
+*36 Inya Myaing Rd, Golden Valley, Bahan*
+
+Superb restaurant! I went three times. Popular with both locals and foreigners. Yes, it's on the bougie side, but the food is just that good. Everything from the tea leaf salad to the Shan noodles was fresh and full of flavor. The menu is expansive and includes international dishes (which I skipped entirely). Inventive cocktails and happy hour prices too.
+
+**Feel Myanmar Restaurant**
+
+No. 124 Pyidaungzu Yeiktha Street
+
+Popular local place, also visited by Anthony Bourdain. Lunch is the time to go. You'll see lots of workers eat there during that time. Food is served cafeteria-style from a spread of prepared dishes: meats, seafood, vegetables. You can also ask for a small sample if you're unsure what to get.
+
+**Aung Mingalar Shan Noodle Shop**
+
+No. 34, Corner of Nawaday Street and Bo Yar Nyunt Rd
+
+I particularly loved this noodle shop, which I discovered while walking around the city. It's famous for Shan noodles from Eastern Myanmar. The sauce is actually tomato based with minced meat, similar in looks to an Italian ragu, but made with local herbs. The dumplings are excellent too.
+
+*A note on food safety: the water supply is not reliably sanitary, so skip the ice and avoid raw street food. Stick to food that's been cooked thoroughly and ideally served fresh and hot. Tea leaf salad is generally fine since the fermentation process takes care of pathogens.*
+
+## What to See
+
+You can cover most of the major sites in 1 or 2 days, depending on your own preferences.
+
+**Shwedagon Pagoda** – the religious heart of Yangon. Perched on top of a hill in the city, this easily recognizable icon is visible all throughout the city. Go there to meditate, pray, and pay respects just like all the locals do. It's a truly special place.
+
+**Sule Pagoda** – another important religious site in the city. Located in the city center of Yangon, it serves as an important community gathering point, both historically and today.
+
+**Walking the old colonial quarter** – from Sule Pagoda down to about The Strand Hotel is the historic colonial quarter. There the British administration and colonizers at the time constructed a fair number of buildings that still remain today. There are placards all over this neighborhood that explain each historic building.
+
+**Bogyoke Aung San Market** – the main bazaar with merchants selling a wide range of products, most notably jewelry, textiles, artworks, and food products. It's worth admiring the steel framed structure of the main building, but I didn't personally buy anything from here. You need to bargain since prices are not usually displayed.
+
+**Kandawgyi Lake** – a beautiful lake just north of the city center with the impressive Karaweik Palace restaurant (looks like a Burmese Noah's ark) anchored next to the shore. The lake has cafes and viewpoints of Shwedagon Pagoda in the background.
+
+**Circular Train Route** – one of the highlights. Yangon Central Station has routes to Mandalay and other destinations in Myanmar. There's also the circular train route, which makes a loop traveling to the suburbs of Yangon and back around. On board you can observe the vibrant daily life unfolding around you – school kids just finished school, sellers returning home for the day. You can board either in the clockwise or counter-clockwise direction. 3 - 4 trains daily. It takes almost 3 hours to complete the entire loop. I took the clockwise route and rode it for about 20 minutes to Kyeemyindaing Station, where there were some cool-looking old defunct rolling stock carriages parked at the station.
+
+*Get a guide! Do it at the beginning of your trip. They can give you an intro into Myanmar and show you all the important sites in Yangon without you having to navigate to these locations one by one, and having to learn about the significance of each site via AI. You can email me if you want specific recommendations on guides.*
+
+## Final Thoughts
+
+Myanmar is a country waiting to be visited. It's like no other country in SE Asia with its own unique people, food, culture, and history. Come see for yourself.
