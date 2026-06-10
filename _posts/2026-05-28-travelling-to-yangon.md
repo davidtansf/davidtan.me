@@ -28,8 +28,6 @@ category: travel-guides
 }
 </script>
 
-> **This post is a work in progress and will be updated.**
-
 Living in Thailand for the past 3 years, Myanmar (Burma) was always right next door, a short 1-hour flight from Bangkok to Yangon, closer than flying to Phuket. The ongoing political situation has kept me away for over 5 years now. Eventually, it was time. Myanmar has a rich history and culture, the crossroads of India, China, and Thailand, and I wanted to see how those influences blend together.
 
 ## Should You Go? The Ongoing Political Situation
