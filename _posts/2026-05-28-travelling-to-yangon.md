@@ -28,9 +28,13 @@ category: travel-guides
 }
 </script>
 
+![Yangon street scene, Myanmar](/assets/images/yangon/0_hero_image.jpeg)
+
 Living in Thailand for the past 3 years, Myanmar (Burma) was always right next door, a short 1-hour flight from Bangkok to Yangon, closer than flying to Phuket. The ongoing political situation has kept me away for over 5 years now. Eventually, it was time. Myanmar has a rich history and culture, the crossroads of India, China, and Thailand, and I wanted to see how those influences blend together.
 
 ## Should You Go? The Ongoing Political Situation
+
+![Street life in Yangon, Myanmar](/assets/images/yangon/1_should_you_go.jpeg)
 
 Short answer – yes. A little background: In February 2021, the military staged a coup against the civilian government, igniting a civil war that is still being fought to this day. Myanmar is a big country and most of the active warzones are nowhere near the main cities of Yangon, Mandalay, and Naypyidaw. I never once felt unsafe walking the streets of Yangon, even at night. Other than a few soldiers guarding the airport and some sprinkled in the city, you would have never known there's a civil war in the country. Understandably some people might have reservations going to and spending money, which generates tax revenues for the military government. The people living in Yangon are getting on with their normal lives, trying to earn a living to put food on the table. Your visit supports them more so than anyone else. In talking to locals, you always hear this phrase "Due to the ongoing political situation,....", and what follows is some quirk about some practical reality of life there. (Those quirks I'll explain later when it comes to preparing for your trip.) For the people of Yangon, it's an acknowledgment of reality and a desire to continue living life regardless. I heard it everywhere, and it stuck with me.
 
@@ -56,6 +60,8 @@ Myanmar is not your typical country. A little prep beforehand goes a long way to
 
 ## Money: The Currency Situation & Credit Cards
 
+![Money exchange and currency in Myanmar](/assets/images/yangon/5_money.jpeg)
+
 This is where you get brownie points for navigating the financial system in Myanmar. Firstly, ***credit cards are not guaranteed to work*** there due to sanctions. I brought two credit cards, and one of them didn't work (even though I verified that the transaction was authorized by me), the system continued to decline it. However, my other credit card (with Chase) actually did work. Don't rely on credit cards for payment since a lot of business and vendors don't even take them. And the exchange rate is much better if you pay in cash instead.
 
 A better bet is to ***use cash for everything***. Myanmar is mostly still a cash country. Due to the ongoing political situation (see – I'm using the phrase myself now), it's used more widely now, along with the demand for foreign currency. The local currency is called the kyat (pronounced *chat*), abbreviated MMK.
@@ -67,6 +73,8 @@ Now for the exchange rate. This is where it gets interesting. **There are two ra
 Lastly, **exchange in a store**, not on the street. If you get approached by a person in the street offering money exchange, ignore them. It's most likely a scam. You can actually use Google Maps to find a money exchanger, but read the reviews first. What I did was ask my guide for a recommended place in the city, and I kept going back to the same place for the entire stay. You can also exchange at the airport initially to help pay for your cab into the city and your first meal into the city, but the rate is not as good. So just exchange a little bit.
 
 ## Getting Around
+
+![Getting around Yangon by Grab and on foot](/assets/images/yangon/6_getting_around_yangon.jpeg)
 
 **Use the [Grab app](https://www.grab.com/)** for getting around the city. It's a popular ride-hailing app used all across Southeast Asia, and Myanmar is no exception. If your credit card works, you can set it as the primary payment method in the app. If not, then choose cash payment instead. Most fares within the city center will be under $3 USD. Don't bother hailing taxis on the street – most will overcharge you, and haggling is mentally draining.
 
@@ -80,7 +88,11 @@ Hotels in Yangon are remarkably affordable right now. The price difference betwe
 
 I stayed at the **Pan Pacific Hotel** because it was centrally located (5 minute walk to Bogyoke Aung San Market) and convenient. It's also next to a mall, and I ducked in regularly for coffee or a snack from the supermarket. I paid under $100 USD for a mid-tier room, and I was even upgraded to the junior suite during my entire stay there. Their service and hospitality were exceptional (courteous and friendly), as were the amenities including a spacious outdoor pool with views of Shwedagon Pagoda and a well-equipped gym, which is rare in hotels.
 
+![Pan Pacific Hotel Yangon — outdoor pool with views of Shwedagon Pagoda](/assets/images/yangon/7a_where_to_stay_pan_pacific.jpeg)
+
 **The Strand Hotel Yangon** – probably the most storied hotel in the entire country. Originally opened in 1901 by the Sarkies Brothers, who also built the E&O Hotel in Penang, Malaysia and, most famously, the Raffles Hotel in Singapore. Walking through its interior takes you back to a different time. I was closely considering this hotel for its historic significance but decided on the Pan Pacific since I wanted something more modern. Even if you don't stay here, it's still worth a visit.
+
+![The Strand Hotel Yangon, originally opened in 1901](/assets/images/yangon/7b_where_to_stay_the_strand.jpeg)
 
 **The Eravati Sule Grand Yangon** – formerly a Rosewood property, housed in a colonial-era building that once served as the New Law Courts. Walk up the staircase to the lobby and you get a real sense of its history.
 
@@ -106,11 +118,15 @@ These were my favorite restaurants:
 
 Superb restaurant! I went three times. Popular with both locals and foreigners. Yes, it's on the bougie side, but the food is just that good. Everything from the tea leaf salad to the Shan noodles was fresh and full of flavor. The menu is expansive and includes international dishes (which I skipped entirely). Inventive cocktails and happy hour prices too.
 
+![Rangoon Tea House Golden Valley, Yangon](/assets/images/yangon/8b_what_to_eat_rangoon_tea_house.jpg)
+
 **Feel Myanmar Restaurant**
 
 No. 124 Pyidaungzu Yeiktha Street
 
 Popular local place, also visited by Anthony Bourdain. Lunch is the time to go. You'll see lots of workers eat there during that time. Food is served cafeteria-style from a spread of prepared dishes: meats, seafood, vegetables. You can also ask for a small sample if you're unsure what to get.
+
+![Feel Myanmar Restaurant, Yangon — cafeteria-style local food](/assets/images/yangon/8a_what_to_eat_feel_myanmar.jpeg)
 
 **Aung Mingalar Shan Noodle Shop**
 
@@ -126,18 +142,26 @@ You can cover most of the major sites in 1 or 2 days, depending on your own pref
 
 **Shwedagon Pagoda** – the religious heart of Yangon. Perched on top of a hill in the city, this easily recognizable icon is visible all throughout the city. Go there to meditate, pray, and pay respects just like all the locals do. It's a truly special place.
 
+![Shwedagon Pagoda, the golden stupa at the heart of Yangon](/assets/images/yangon/9a_what_to_see_shwedagon_pagoda.jpeg)
+
 **Sule Pagoda** – another important religious site in the city. Located in the city center of Yangon, it serves as an important community gathering point, both historically and today.
 
 **Walking the old colonial quarter** – from Sule Pagoda down to about The Strand Hotel is the historic colonial quarter. There the British administration and colonizers at the time constructed a fair number of buildings that still remain today. There are placards all over this neighborhood that explain each historic building.
 
 **Bogyoke Aung San Market** – the main bazaar with merchants selling a wide range of products, most notably jewelry, textiles, artworks, and food products. It's worth admiring the steel framed structure of the main building, but I didn't personally buy anything from here. You need to bargain since prices are not usually displayed.
 
+![Bogyoke Aung San Market, Yangon](/assets/images/yangon/9b_what_to_see_bogyoke.jpeg)
+
 **Kandawgyi Lake** – a beautiful lake just north of the city center with the impressive Karaweik Palace restaurant (looks like a Burmese Noah's ark) anchored next to the shore. The lake has cafes and viewpoints of Shwedagon Pagoda in the background.
 
 **Circular Train Route** – one of the highlights. Yangon Central Station has routes to Mandalay and other destinations in Myanmar. There's also the circular train route, which makes a loop traveling to the suburbs of Yangon and back around. On board you can observe the vibrant daily life unfolding around you – school kids just finished school, sellers returning home for the day. You can board either in the clockwise or counter-clockwise direction. 3 - 4 trains daily. It takes almost 3 hours to complete the entire loop. I took the clockwise route and rode it for about 20 minutes to Kyeemyindaing Station, where there were some cool-looking old defunct rolling stock carriages parked at the station.
+
+![The Circular Train route from Yangon Central Railway Station](/assets/images/yangon/9c_what_to_see_circular_train_route.jpeg)
 
 *Get a guide! Do it at the beginning of your trip. They can give you an intro into Myanmar and show you all the important sites in Yangon without you having to navigate to these locations one by one, and having to learn about the significance of each site via AI. You can email me if you want specific recommendations on guides.*
 
 ## Final Thoughts
 
 Myanmar is a country waiting to be visited. It's like no other country in SE Asia with its own unique people, food, culture, and history. Come see for yourself.
+
+![Yangon, Myanmar](/assets/images/yangon/10_final_thoughts.jpeg)
