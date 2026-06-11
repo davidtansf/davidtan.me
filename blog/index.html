@@ -89,9 +89,9 @@
         <div class="blog-grid">
             {% for post in site.posts %}
             <article class="blog-card" data-category="{{ post.category | downcase }}">
-                <div class="blog-card-image {% unless post.image %}{% if post.category == 'travel-guides' %}travel-gradient{% elsif post.category == 'thailand-living' %}life-gradient{% elsif post.category == 'personal-finance' %}finance-gradient{% else %}travel-gradient{% endif %}{% endunless %}"{% if post.image %} style="background: url('{{ post.image }}') center top / cover no-repeat;"{% endif %}>
+                <a href="{{ post.url }}" class="blog-card-image {% unless post.image %}{% if post.category == 'travel-guides' %}travel-gradient{% elsif post.category == 'thailand-living' %}life-gradient{% elsif post.category == 'personal-finance' %}finance-gradient{% else %}travel-gradient{% endif %}{% endunless %}"{% if post.image %} style="background: url('{{ post.image }}') center top / cover no-repeat;"{% endif %}>
                     <span class="category-tag">{% if post.category == 'travel-guides' %}Travel Guides{% elsif post.category == 'thailand-living' %}Thailand Living{% elsif post.category == 'personal-finance' %}Personal Finance{% else %}{{ post.category }}{% endif %}</span>
-                </div>
+                </a>
                 <div class="blog-card-content">
                     <time class="blog-date">{{ post.date | date: "%B %d, %Y" }}</time>
                     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>

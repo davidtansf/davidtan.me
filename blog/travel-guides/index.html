@@ -89,9 +89,9 @@
         <div class="blog-grid">
             {% for post in site.categories.travel-guides %}
             <article class="blog-card">
-                <div class="blog-card-image {% unless post.image %}travel-gradient{% endunless %}"{% if post.image %} style="background: url('{{ post.image }}') center top / cover no-repeat;"{% endif %}>
+                <a href="{{ post.url }}" class="blog-card-image {% unless post.image %}travel-gradient{% endunless %}"{% if post.image %} style="background: url('{{ post.image }}') center top / cover no-repeat;"{% endif %}>
                     <span class="category-tag">Travel Guides</span>
-                </div>
+                </a>
                 <div class="blog-card-content">
                     <time class="blog-date">{{ post.date | date: "%B %d, %Y" }}</time>
                     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
