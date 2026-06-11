@@ -3,6 +3,7 @@ title: "Travelling to Yangon: What You Need to Know Before You Go"
 description: "A practical first-timer's guide to Yangon from someone based in Bangkok — covering visas, VPNs, cash, eSIMs, and getting around a city unlike anywhere else in Southeast Asia."
 date: 2026-05-28
 category: travel-guides
+image: /assets/images/yangon/0_hero_image.jpeg
 ---
 
 <script type="application/ld+json">

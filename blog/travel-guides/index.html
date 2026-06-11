@@ -89,7 +89,7 @@
         <div class="blog-grid">
             {% for post in site.categories.travel-guides %}
             <article class="blog-card">
-                <div class="blog-card-image travel-gradient">
+                <div class="blog-card-image {% unless post.image %}travel-gradient{% endunless %}"{% if post.image %} style="background: url('{{ post.image }}') center top / cover no-repeat;"{% endif %}>
                     <span class="category-tag">Travel Guides</span>
                 </div>
                 <div class="blog-card-content">
