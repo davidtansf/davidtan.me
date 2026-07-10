@@ -129,12 +129,15 @@
             margin-bottom: 0;
         }
 
-        /* Center How It Works on consulting page */
+        /* Center How It Works on consulting page (3 steps, not 4) */
         .how-it-works {
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
             padding: 0 3rem;
+        }
+        .how-it-works .how-it-works__steps {
+            grid-template-columns: repeat(3, 1fr);
         }
 
         @media (max-width: 768px) {
@@ -147,6 +150,9 @@
             }
             .consulting-pricing-section { padding: 1rem 1.5rem 2rem; }
             .how-it-works { padding: 0 1.5rem; }
+            .how-it-works .how-it-works__steps {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <!-- Google Analytics -->
