@@ -25,6 +25,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css?v={{ site.time | date: '%s' }}">
+    <style>
+        .consulting-pricing-section {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 1rem 3rem 2.5rem;
+        }
+        .consulting-pricing-inner {
+            background: var(--sand);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+        .consulting-pricing-inner h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--ocean-deep);
+            margin-bottom: 1.5rem;
+        }
+        .consulting-pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        .consulting-pricing-table td {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--sand-dark);
+            color: var(--text-dark);
+        }
+        .consulting-pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+        .consulting-pricing-table td:last-child {
+            text-align: right;
+            font-weight: 700;
+            color: var(--ocean-deep);
+        }
+        .consulting-pricing-note {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .consulting-pricing-section { padding: 1rem 1.5rem 2rem; }
+        }
+    </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-REDYTVQ1E6"></script>
     <script>
@@ -102,21 +147,6 @@
                 </ul>
             </div>
 
-            <div class="pricing-card pricing-card--featured">
-                <span class="pricing-card__label">Ongoing support</span>
-                <div class="pricing-card__name">Monthly Retainer</div>
-                <div class="pricing-card__price">
-                    <span class="pricing-card__amount">$200</span>
-                    <span class="pricing-card__period">&nbsp;/ month</span>
-                </div>
-                <ul class="pricing-card__features">
-                    <li>2 × 60-minute check-ins, every month</li>
-                    <li>Ongoing review of your savings progress and withdrawal thinking</li>
-                    <li>Expat money considerations — what to research and who to talk to</li>
-                    <li>Accountability and adjustments as your situation evolves</li>
-                    <li>Cancel anytime — no contracts</li>
-                </ul>
-            </div>
         </div>
 
         <!-- How It Works -->
@@ -133,11 +163,7 @@
                 </div>
                 <div class="how-it-works__step">
                     <div class="how-it-works__num">3</div>
-                    <p>Decide on ongoing support — the retainer is month-to-month, no commitment required</p>
-                </div>
-                <div class="how-it-works__step">
-                    <div class="how-it-works__num">4</div>
-                    <p>Work toward the exit — we refine your plan together until you're ready to pull the trigger</p>
+                    <p>Book follow-up sessions as needed — no commitment, no monthly obligation</p>
                 </div>
             </div>
         </div>
@@ -145,6 +171,26 @@
         <!-- Legal Disclaimer -->
         <div class="consulting-disclaimer">
             <strong>Disclaimer:</strong> I am not a licensed financial advisor, CFA, or CFP. The information shared in these sessions is based on personal experience and is for educational purposes only. It does not constitute professional financial, tax, or investment advice. Please consult a licensed professional for decisions specific to your financial situation.
+        </div>
+    </section>
+
+    <!-- Shared Pricing -->
+    <section class="consulting-pricing-section">
+        <div class="consulting-pricing-inner">
+            <h3>Pricing</h3>
+            <table class="consulting-pricing-table">
+                <tbody>
+                    <tr>
+                        <td>Initial Consult</td>
+                        <td>$150 / 60 min</td>
+                    </tr>
+                    <tr>
+                        <td>Follow-up Sessions</td>
+                        <td>$100 / 60 min</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="consulting-pricing-note">Applies to both tracks. No retainer, no commitment — book when it's useful.</p>
         </div>
     </section>
 
@@ -172,21 +218,6 @@
                 </ul>
             </div>
 
-            <div class="pricing-card pricing-card--featured">
-                <span class="pricing-card__label">Ongoing support</span>
-                <div class="pricing-card__name">Monthly Retainer</div>
-                <div class="pricing-card__price">
-                    <span class="pricing-card__amount">$200</span>
-                    <span class="pricing-card__period">&nbsp;/ month</span>
-                </div>
-                <ul class="pricing-card__features">
-                    <li>2 × 60-minute check-ins, every month</li>
-                    <li>Deep-dive research into neighborhoods, cities, and daily logistics</li>
-                    <li>Visa and bureaucracy support as your plans take shape</li>
-                    <li>Bank accounts, healthcare, SIMs, and the small stuff that adds up</li>
-                    <li>Cancel anytime — no contracts</li>
-                </ul>
-            </div>
         </div>
     </section>
 
@@ -194,7 +225,7 @@
     <section class="consulting-cta">
         <h2>Not sure which track fits?</h2>
         <p>Start with the initial consult — we'll figure it out together.</p>
-        <a href="https://calendly.com/consultdavid" target="_blank" rel="noopener" class="btn btn-primary">Book a Consult — $150</a>
+        <a href="https://calendly.com/consultdavid" target="_blank" rel="noopener" class="btn btn-primary">Book an Initial Consult — $150</a>
     </section>
 
     <!-- Footer -->
