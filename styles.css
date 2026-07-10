@@ -1430,12 +1430,11 @@ h1, h2, h3, h4, h5, h6 {
 .consulting-disclaimer {
     margin-top: 3rem;
     padding: 1.25rem 1.75rem;
-    background: var(--sand);
-    border-left: 3px solid var(--sand-dark);
-    border-radius: 0 8px 8px 0;
+    border-top: 1px solid var(--sand-dark);
     font-size: 0.8rem;
     color: var(--text-light);
     line-height: 1.75;
+    text-align: left;
 }
 
 .consulting-cta {
