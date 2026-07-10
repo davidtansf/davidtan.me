@@ -26,10 +26,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css?v={{ site.time | date: '%s' }}">
     <style>
+        /* Areas of Focus */
+        .consulting-focus {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 3rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .consulting-focus__label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ocean-light);
+            margin-bottom: 0.75rem;
+        }
+        .consulting-focus__text {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* What's Covered */
+        .consulting-covers {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 3rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .consulting-covers__label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        .consulting-covers__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .consulting-covers__list li {
+            padding: 0.6rem 0 0.6rem 1.5rem;
+            position: relative;
+            color: var(--text-dark);
+            line-height: 1.5;
+            border-bottom: 1px solid var(--sand-dark);
+        }
+        .consulting-covers__list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--ocean-light);
+        }
+        .consulting-covers__list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Pricing */
         .consulting-pricing-section {
             max-width: 680px;
             margin: 0 auto;
-            padding: 1rem 3rem 2.5rem;
+            padding: 1rem 3rem 3rem;
         }
         .consulting-pricing-inner {
             background: var(--sand);
@@ -66,7 +128,15 @@
             margin-top: 1rem;
             margin-bottom: 0;
         }
+
         @media (max-width: 768px) {
+            .consulting-focus,
+            .consulting-covers {
+                grid-template-columns: 1fr;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                gap: 2rem;
+            }
             .consulting-pricing-section { padding: 1rem 1.5rem 2rem; }
         }
     </style>
@@ -123,58 +193,41 @@
         </div>
     </section>
 
-    <!-- Track 1: Financial Independence -->
-    <section class="consulting-track">
-        <div class="consulting-track__header">
-            <span class="section-label">Track 1</span>
-            <h2>Financial Independence Consulting</h2>
-            <p class="consulting-track__intro">You've been saving. Maybe you're close. Maybe you're not sure. I'll help you look at your actual numbers, build a realistic withdrawal plan, and give you an honest answer on where you stand.</p>
+    <!-- Areas of Focus -->
+    <section class="consulting-focus">
+        <div class="consulting-focus__col">
+            <p class="consulting-focus__label">Financial Independence</p>
+            <p class="consulting-focus__text">You've been saving. Maybe you're close. Maybe you're not sure. I'll help you look at your actual numbers, build a realistic withdrawal plan, and give you an honest answer on where you stand.</p>
         </div>
-
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <span class="pricing-card__label">One-time</span>
-                <div class="pricing-card__name">Initial Consult</div>
-                <div class="pricing-card__price">
-                    <span class="pricing-card__amount">$150</span>
-                    <span class="pricing-card__period">&nbsp;/ 60 minutes</span>
-                </div>
-                <ul class="pricing-card__features">
-                    <li>Review your savings rate, monthly expenses, and net worth</li>
-                    <li>Work through your FIRE number and what a realistic timeline might look like</li>
-                    <li>Identify the biggest gaps in your current plan</li>
-                    <li>Honest assessment of whether you're on track — and what to fix</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <!-- How It Works -->
-        <div class="how-it-works">
-            <h3 class="how-it-works__title">How It Works</h3>
-            <div class="how-it-works__steps">
-                <div class="how-it-works__step">
-                    <div class="how-it-works__num">1</div>
-                    <p>Book the initial consult — 60 minutes to map out your numbers and your goal</p>
-                </div>
-                <div class="how-it-works__step">
-                    <div class="how-it-works__num">2</div>
-                    <p>Get a clear picture — you'll leave knowing exactly where you stand and what needs to change</p>
-                </div>
-                <div class="how-it-works__step">
-                    <div class="how-it-works__num">3</div>
-                    <p>Book follow-up sessions as needed — no commitment, no monthly obligation</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Legal Disclaimer -->
-        <div class="consulting-disclaimer">
-            <strong>Disclaimer:</strong> I am not a licensed financial advisor, CFA, or CFP. The information shared in these sessions is based on personal experience and is for educational purposes only. It does not constitute professional financial, tax, or investment advice. Please consult a licensed professional for decisions specific to your financial situation.
+        <div class="consulting-focus__col">
+            <p class="consulting-focus__label">Retire Abroad</p>
+            <p class="consulting-focus__text">You know you want to leave. The question is where — and how to actually make it happen. I've navigated visas, neighborhoods, bureaucracy, and daily life in Southeast Asia. I can help you skip the guesswork.</p>
         </div>
     </section>
 
-    <!-- Shared Pricing -->
+    <!-- What's Covered -->
+    <section class="consulting-covers">
+        <div class="consulting-covers__col">
+            <p class="consulting-covers__label">Financial Independence — what we cover</p>
+            <ul class="consulting-covers__list">
+                <li>Review your savings rate, monthly expenses, and net worth</li>
+                <li>Work through your FIRE number and what a realistic timeline might look like</li>
+                <li>Identify the biggest gaps in your current plan</li>
+                <li>Honest assessment of whether you're on track — and what to fix</li>
+            </ul>
+        </div>
+        <div class="consulting-covers__col">
+            <p class="consulting-covers__label">Retire Abroad — what we cover</p>
+            <ul class="consulting-covers__list">
+                <li>Assess which countries match your budget and lifestyle goals</li>
+                <li>Compare real cost of living across your destination shortlist</li>
+                <li>Walk through visa options and long-term residency paths</li>
+                <li>Clear picture of what life actually costs vs. what you've read online</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing -->
     <section class="consulting-pricing-section">
         <div class="consulting-pricing-inner">
             <h3>Pricing</h3>
@@ -194,34 +247,31 @@
         </div>
     </section>
 
-    <!-- Track 2: Retire Abroad -->
-    <section class="consulting-track consulting-track--bordered">
-        <div class="consulting-track__header">
-            <span class="section-label">Track 2</span>
-            <h2>Retire Abroad Consulting</h2>
-            <p class="consulting-track__intro">You know you want to leave. The question is where — and how to actually make it happen. I've navigated visas, neighborhoods, bureaucracy, and daily life in Southeast Asia. I can help you skip the guesswork.</p>
-        </div>
-
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <span class="pricing-card__label">One-time</span>
-                <div class="pricing-card__name">Initial Consult</div>
-                <div class="pricing-card__price">
-                    <span class="pricing-card__amount">$150</span>
-                    <span class="pricing-card__period">&nbsp;/ 60 minutes</span>
-                </div>
-                <ul class="pricing-card__features">
-                    <li>Assess which countries match your budget and lifestyle goals</li>
-                    <li>Compare real cost of living across your destination shortlist</li>
-                    <li>Walk through visa options and long-term residency paths</li>
-                    <li>Clear picture of what life actually costs vs. what you've read online</li>
-                </ul>
+    <!-- How It Works -->
+    <div class="how-it-works">
+        <h3 class="how-it-works__title">How It Works</h3>
+        <div class="how-it-works__steps">
+            <div class="how-it-works__step">
+                <div class="how-it-works__num">1</div>
+                <p>Book the initial consult — 60 minutes to map out your situation and figure out which track fits best</p>
             </div>
-
+            <div class="how-it-works__step">
+                <div class="how-it-works__num">2</div>
+                <p>Get a clear picture — you'll leave knowing exactly where you stand and what needs to change</p>
+            </div>
+            <div class="how-it-works__step">
+                <div class="how-it-works__num">3</div>
+                <p>Book follow-up sessions as needed — no commitment, no monthly obligation</p>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Bottom CTA -->
+    <!-- Disclaimer -->
+    <div class="consulting-disclaimer">
+        <strong>Disclaimer:</strong> I am not a licensed financial advisor, CFA, or CFP. The information shared in these sessions is based on personal experience and is for educational purposes only. It does not constitute professional financial, tax, or investment advice. Please consult a licensed professional for decisions specific to your financial situation.
+    </div>
+
+    <!-- CTA -->
     <section class="consulting-cta">
         <h2>Not sure which track fits?</h2>
         <p>Start with the initial consult — we'll figure it out together.</p>
